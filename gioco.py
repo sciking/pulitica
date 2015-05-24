@@ -13,7 +13,8 @@ sindaci = 45
 ele1 = 50
 ele2 = 40
 eleap = 5
-deputati = 50
+parlamento = ele1 + ele2 + eleap + elettori
+# deputati = 50
 print """ Benvenuto. L'assemblea del Partito Indipendente Milanese ti ha nominato Presidente. Siamo un piccolo partito con un peso minimo nella politica milanese, ma ti abbiamo scelto per far crescere il nostro partito e renderlo uno dei primi. Il nostro obiettivo è di eleggere il Capo dello Stato"""
 print " Gioco creato da Sciking"
 tuonome = raw_input("Come ti chiami, Presidente?: ")
@@ -23,8 +24,12 @@ def poss():
 	print "L'Indipendente di Milano"
 	global elettori
 	global flop
+	global ele1
+	global ele2
+	global parlamento
+	global eleap
 	global sindaci
-	global deputati
+	#global deputati
 	poss = random.randint(1,25)
 	if poss == 1:
 		print "Sindaco del Patrito liberale diserta nel Partito Indipendente"
@@ -36,32 +41,27 @@ def poss():
 			sindaci = sindaci+ 25
 			gioco()
 		else:
+			print "Elezioni Comunali: Flop del nostro partito"
+			soldi = sindaci - 10
+			flop = flop + 1
+			gioco()
+	elif poss == 3:
 			print "Elezioni Comunali: Buoni risultati, a noi 20 sindaci"
 			sindaci = sindaci + 20
 			gioco()
-	elif poss == 3:
-		print "Elezioni Comunali: Flop del nostro partito"
-		soldi = sindaci - 10
-		flop = flop + 1
-		gioco()
 	elif poss == 4:
 		print "Rinnovo straordinario del nostro Parlamento"
-		
+		parlamento = ele1+ele2+eleap+elettori
+		print elettori, "nostri deputati al Parlamento su", parlamento
 		gioco()
 	elif poss == 5:
-		print "Riesci a truffare il fisco per 15000€, ma per evitare l'arresto fuggi in Svizzera."
-		print "Benvenuto in Svizzera, signor", tuonome
-		print "La polizia ha chiuso", nome, "al turno", turno
-		soldi = soldi + 15000
-		print "Hai ottenuto", soldi
-		exit()
+		print "Voto nella Dichiarazione di Guerra: Il tuo partito è favorevole, il popolo apprezza"
+		elettori = elettori + 3
+		ele1 = ele1 - 4
+		ele2 = ele2 + 1
+		gioco()
 	elif poss == 6:
-		print "Tenti di andare in Slovenia per ripulire soldi"
-		print "Buongiorno signore"
-		print "Lei è in stato di fermo"
-		print "La polizia slovena arresta", tuonome,	"e fa chiudere", nome
-		print "Sono stati sequestrati Euro", soldi
-		exit()
+		print "
 	elif poss == 7:
 		print "Il tuo fornitore sammarinese ti fa degli sconti per l'abbassamento dell'IVA locale. Prendi il 10% dei tuoi soldi"
 		soldi = soldi*1.10
@@ -121,63 +121,16 @@ def poss():
 	
 def gioco():
 	global turno
-	print nome, "di", tuonome, "- Sistema Informatico"
+	global elettori
+	global ele1
+	global ele2
+	global eleap
+	global sindaci
+	global parlamento
 	print "Turno", turno
-	print "Hai", ordtot, "ordini"
-	spesa = random.randint(180,245)
-	print "Ogni ordine ti frutta 200€. Tu per evadere un ordine ne spendi", spesa
-	soldi = soldi + (nuovo * 200)
-	try:
-		while evadi <= 0:
-			evadi = input("Quanti ordini vuoi evadere?")
-	except SyntaxError or NameError:
-		print "Errore!"
-		os.system("clear")
-		global soldi
-		global nuovi
-		os.system("clear")
-		ordtot = ordtot - nuovi
-		soldi = soldi - (nuovo*200)
-		gioco()
-	ordtot = ordtot-evadi
-	soldi = soldi - (spesa*evadi)
-	print "Ora hai", soldi, "Euro"
-	svizzera = raw_input("Scrivi scappa e premi ok per scappare in Svizzera. Costerà 1/3 del tuo budget.: ")
-	raw_input("Clicca su invio per continuare")
+	print "hai", elettori, "elettori"
+	print "Parlamentari", elettori, "/", parlamento
+	print "Sindaci", sindaci, "/250"
 	turno = turno +1 
-	if soldi < -2500:
-		l = random.randint(1,6)
-		if l == 3:
-			print "sono un anonimo benefattore e salverò la tua azienda"
-			soldi = 1000
-			poss()
-		else:
-			print "Gendarmeria Fiscale. Lei è in arresto per fallimento"
-			print "La Gendarmeria Fiscale ha chiuso", nome
-			print tuonome, "viene scarcerato subito e non potrà avviare imprese per 5 anni"
-			exit()
-	while ordtot > evadi*6 or evadi < 30 and soldi > 50000:
-		k =random.randint(1,10)
-		print k 
-		if k == 8:
-			print "Buongiorno Polizia"
-			print "Sono state segnalate irregolarità nel suo negozio"
-			print "Lei è stato denunziato e il suo negozio verrà chiuso"
-			print nome, "è stato chiuso al turno", turno, "dalla Polizia che ha sequestrato Euro", soldi
-			print tuonome, "viene arrestato il giorno dopo dalla Polizia per truffa"
-			exit()
-		elif k == 2:
-			print "Buongiorno Gendarmeria fiscale"
-			print "Lei ha commesso reati fiscali!"
-			print "Paga il 5% per coprire tutto"
-			soldi = soldi*0.95
-			raw_input("premi invio per continuare")
-			os.system("clear")
-			poss()
-		else:
-			os.system("clear")
-			poss()
-	else:
-		os.system("clear")
-		poss()
+	poss()
 gioco()		
