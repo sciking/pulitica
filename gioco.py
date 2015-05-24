@@ -13,6 +13,7 @@ sindaci = 45
 ele1 = 50
 ele2 = 40
 eleap = 5
+leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria"
 parlamento = ele1 + ele2 + eleap + elettori
 # deputati = 50
 print """ Benvenuto. L'assemblea del Partito Indipendente Milanese ti ha nominato Presidente. Siamo un piccolo partito con un peso minimo nella politica milanese, ma ti abbiamo scelto per far crescere il nostro partito e renderlo uno dei primi. Il nostro obiettivo è di eleggere il Capo dello Stato"""
