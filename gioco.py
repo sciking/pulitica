@@ -7,38 +7,48 @@ print "Il gioco in cui devi entrare in parlamento e vincere le elezioni!"
 print "Basato su 'Fuga col malloppo'
 import random
 turno = 1
-#ord1 = 0
-#ord2 = 0
-nuovo = 0
-#ord3 = 0
-ordtot = 0
-evadi = 0
-soldi = 10000
+elettori = 15
+flop = 0
+sindaci = 45
+ele1 = 50
+ele2 = 40
+eleap = 5
+deputati = 50
 print """ Benvenuto. L'assemblea del Partito Indipendente Milanese ti ha nominato Presidente. Siamo un piccolo partito con un peso minimo nella politica milanese, ma ti abbiamo scelto per far crescere il nostro partito e renderlo uno dei primi. Il nostro obiettivo è di eleggere il Capo dello Stato"""
 print " Gioco creato da Sciking"
 tuonome = raw_input("Come ti chiami, Presidente?: ")
 raw_input("Premi invio per iniziare:")
 os.system("clear")
 def poss():
-	global soldi
-	poss = random.randint(1,20)
+	print "L'Indipendente di Milano"
+	global elettori
+	global flop
+	global sindaci
+	global deputati
+	poss = random.randint(1,25)
 	if poss == 1:
-		print "Hai vinto 1000 Euro al lotto"
-		soldi = soldi + 1000
+		print "Sindaco del Patrito liberale diserta nel Partito Indipendente"
+		sindaci = sindaci + 1
 		gioco()
 	elif poss == 2:
-		print "Hai ricevuto una multa di 1000 Euro dalla Gendarmeria Fiscale"
-		soldi = soldi-1000
-		gioco()
+		if elettori > 35:
+			print "Elezioni Comunali: Eletti molti sindaci e il Sindaco di Milano!"
+			sindaci = sindaci+ 25
+			gioco()
+		else:
+			print "Elezioni Comunali: Buoni risultati, a noi 20 sindaci"
+			sindaci = sindaci + 20
+			gioco()
 	elif poss == 3:
-		print "Un fornitore polacco ti trova dei cellulari più economici e guadagni 700 Euro"
-		soldi = soldi + 700
+		print "Elezioni Comunali: Flop del nostro partito"
+		soldi = sindaci - 10
+		flop = flop + 1
 		gioco()
-	elif poss == 4 and evadi < 50:
-		print "Dei ladri ti hanno rapinato il negozio. Perdi 5000€, ma l'assicurazione te ne ridà 3000"
-		soldi = soldi - 2000
+	elif poss == 4:
+		print "Rinnovo straordinario del nostro Parlamento"
+		
 		gioco()
-	elif poss == 5 and soldi > 65000:
+	elif poss == 5:
 		print "Riesci a truffare il fisco per 15000€, ma per evitare l'arresto fuggi in Svizzera."
 		print "Benvenuto in Svizzera, signor", tuonome
 		print "La polizia ha chiuso", nome, "al turno", turno
@@ -111,14 +121,6 @@ def poss():
 	
 def gioco():
 	global turno
-	#global ord1
-	#global ord2
-	#global ord3
-	global ordtot
-	global soldi
-	evadi = 0
-	nuovo = random.randint(300,555)
-	ordtot = ordtot+nuovo
 	print nome, "di", tuonome, "- Sistema Informatico"
 	print "Turno", turno
 	print "Hai", ordtot, "ordini"
@@ -175,68 +177,7 @@ def gioco():
 		else:
 			os.system("clear")
 			poss()
-			
-	if svizzera == "scappa":
-		suisse = random.randint(1,6)
-		if suisse == 4:
-			print "Sei stato fermato al valico di Brogeda dalle autorità italiane"
-			print "Sei in arresto per truffa e contrabbando"
-			print "La Polizia ha chiuso", nome, "e ha sequestrato", soldi*0.66
-			print "Il giorno dopo i giornali titolano 'Arrestato", tuonome, "al valico di frontiera'"
-			exit()
-		elif suisse == 3:
-			print "C'è stato un grave problema. Perdi metà dei tuoi soldi"
-			print "Sei fuggito in Svizzera con", soldi/2
-			exit()
-		elif suisse == 6:
-			soldi = soldi*0.66
-			print "Signor", tuonome, "i suoi documenti non sono validi"
-			print "La Svizzera ti ha respinto, torni in Italia."
-			poss()
-		else:
-			print "Benvenuto in Svizzera, signor", tuonome
-			print "Sei stato ammesso in Svizzera con Euro", soldi*0.66
-			print "Le autorità hanno chiuso", nome
-			exit()
 	else:
 		os.system("clear")
 		poss()
-	
-
-	
-def gioco5():
-	global turno
-	while turno < 6:
-		print nome, "di", tuonome, "- Sistema Informatico"
-		print "Turno", turno
-		#global ord1
-		#global ord2
-		#global ord3
-		global ordtot
-		global soldi
-		global nuovo
-		evadi = 0
-		nuovo = random.randint(50,250)
-		ordtot = ordtot+nuovo
-		print "Hai", ordtot, "ordini"
-		print "Ogni ordine ti frutta 200€. Tu per evadere un ordine ne spendi 175"
-		soldi = soldi + (nuovo * 200)
-		try:
-			while evadi <= 0:
-				evadi = input("Quanti ordini vuoi evadere?")
-		except SyntaxError or NameError:
-			print "errore!"
-			global soldi
-			global nuovi
-			os.system("clear")
-			ordtot = ordtot - nuovi
-			soldi = soldi - (nuovo*200)
-			gioco5()
-		ordtot = ordtot-evadi
-		soldi = soldi - (175*evadi)
-		print "Ora hai", soldi, "Euro"
-		raw_input("Clicca su invio per continuare")
-		turno = turno +1 
-		os.system("clear")
-	gioco()
-gioco5()		
+gioco()		
