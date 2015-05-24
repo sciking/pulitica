@@ -156,6 +156,8 @@ def gioco():
 		if parlamento/deputati < 2 and flop < 2:
 			print """Salve signor presidente.
 Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Presidente. Governi bene in questi due anni!"""
+			print "Onori al Capo dello Stato", nome, "!"
+			exit()
 		elif parlamento/deputati < 2:
 			print "Salve, Presidente. Abbiamo eletto il nostro nuovo presidente. Aumenterà i nostri elettori."
 			elettori = elettori + 10
@@ -185,8 +187,10 @@ Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello 
 		eleap = eleap + random.randint(-5,5)
 
 	turno = turno +1 
-	if sindaci == 250:
-		print "Grazie Presidente, vogliamo mandarti in campo! Hai vinto, possediamo tutti i comuni ora. Abbiamo eletto il Capo Dello Stato con maggioranza unanime e sei tu l'attuale capo dello stato. Governa bene!"
+	if sindaci > 240:
+		print "Grazie Presidente, vogliamo mandarti in campo! Hai vinto, possediamo quasi tutti i comuni ora. Abbiamo eletto il Capo Dello Stato con maggioranza dei comuni e sei tu l'attuale Capo dello Stato. Governa bene!"
+		exit()
+		
 	if flop > 5:
 		print "Hai sbagliato troppe volte, mi spiace. Sei licenziato"
 		exit()
