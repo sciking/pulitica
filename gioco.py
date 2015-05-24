@@ -4,7 +4,7 @@ import os
 os.system("clear")
 print "Pulitica"
 print "Il gioco in cui devi entrare in parlamento e vincere le elezioni!"
-print "Basato su 'Fuga col malloppo'
+print "Basato su 'Fuga col malloppo'"
 import random
 turno = 1
 elettori = 15
@@ -13,7 +13,7 @@ sindaci = 45
 ele1 = 50
 ele2 = 40
 eleap = 5
-leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria"
+leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico", "contro le pantofole"]
 parlamento = ele1 + ele2 + eleap + elettori
 # deputati = 50
 print """ Benvenuto. L'assemblea del Partito Indipendente Milanese ti ha nominato Presidente. Siamo un piccolo partito con un peso minimo nella politica milanese, ma ti abbiamo scelto per far crescere il nostro partito e renderlo uno dei primi. Il nostro obiettivo è di eleggere il Capo dello Stato"""
@@ -62,7 +62,11 @@ def poss():
 		ele2 = ele2 + 1
 		gioco()
 	elif poss == 6:
-		print "
+		print "Arrestato un nostro sindaco!"
+		print "Perderemo sicuramente elettorato!"
+		sindaci = sindaci - 2
+		elettori = elettori -2 
+		gioco()
 	elif poss == 7:
 		print "Il tuo fornitore sammarinese ti fa degli sconti per l'abbassamento dell'IVA locale. Prendi il 10% dei tuoi soldi"
 		soldi = soldi*1.10
@@ -127,11 +131,38 @@ def gioco():
 	global ele2
 	global eleap
 	global sindaci
+	global flop
 	global parlamento
+	if turno%5 == 0:
+		flop = 0
+		if parlamento/elettori < 2 and flop < 2:
+			print """Salve signor presidente.
+Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Presidente. Governi bene in questi due anni!"""
+		elif parlamento/elettori < 2:
+			print "Salve, Presidente. Abbiamo eletto il nostro nuovo presidente. Aumenterà i nostri elettori."
+			elettori = elettori + 10
+		
 	print "Turno", turno
 	print "hai", elettori, "elettori"
 	print "Parlamentari", elettori, "/", parlamento
 	print "Sindaci", sindaci, "/250"
+	print "LEGGE DEL GIORNO:"
+	r = random.randint(1,6)
+	print "legge", leggi[r]
+	scelta = raw_input("Vuoi approvare la legge?")
+	scelta = scelta.lower
+	if scelta == "si":
+		del leggi[r]
+		elettori = elettori + random.randint(-5,5)
+		ele1 = ele1 + random.randint(-5,5)
+		ele2 = ele2 + random.randint(-5,5)
+		eleap = eleap + random.randint(-5,5)
+	else:
+		elettori = elettori + random.randint(-5,5)
+		ele1 = ele1 + random.randint(-5,5)
+		ele2 = ele2 + random.randint(-5,5)
+		eleap = eleap + random.randint(-5,5)
+
 	turno = turno +1 
 	poss()
 gioco()		
