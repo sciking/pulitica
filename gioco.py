@@ -11,6 +11,7 @@ elettori = 15
 flop = 0
 sindaci = 45
 ele1 = 50
+deputati = 15
 ele2 = 40
 eleap = 5
 leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro", "per l'illegalità del comunismo"]
@@ -26,6 +27,7 @@ def poss():
 	global elettori
 	global flop
 	global ele1
+	global deputati
 	global ele2
 	global parlamento
 	global eleap
@@ -52,7 +54,8 @@ def poss():
 			gioco()
 	elif poss == 4:
 		print "Rinnovo straordinario del nostro Parlamento"
-		parlamento = ele1+ele2+eleap+elettori
+		parlamento = (ele1+ele2+eleap+elettori)-10
+		deputati = elettori
 		print elettori, "nostri deputati al Parlamento su", parlamento
 		gioco()
 	elif poss == 5:
@@ -144,22 +147,26 @@ def gioco():
 	global sindaci
 	global flop
 	global parlamento
+	global deputati
 	print ""
 	print ""
 	print ""
 	if turno%5 == 0:
-		flop = 0
-		if parlamento/elettori < 2 and flop < 2:
+		deputati = elettori
+		if parlamento/deputati < 2 and flop < 2:
 			print """Salve signor presidente.
 Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Presidente. Governi bene in questi due anni!"""
-		elif parlamento/elettori < 2:
+		elif parlamento/deputati < 2:
 			print "Salve, Presidente. Abbiamo eletto il nostro nuovo presidente. Aumenterà i nostri elettori."
 			elettori = elettori + 10
 			sindaci = sindaci + 10
-		parlamento = elettori+ele1+ele2+eleap
+	if parlamento/deputati < 2 and turno%2 == 0:
+		print "Hai eletto il governo!"
+		flop = 0
+		elettori = elettori + 3
 	print "Turno", turno
 	print "hai", elettori, "elettori"
-	print "Parlamentari", elettori, "/", parlamento
+	print "Parlamentari", deputati, "/", parlamento
 	print "Sindaci", sindaci, "/250"
 	print "LEGGE DEL GIORNO:"
 	r = random.randint(1,9)
