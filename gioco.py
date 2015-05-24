@@ -13,7 +13,7 @@ sindaci = 45
 ele1 = 50
 ele2 = 40
 eleap = 5
-leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico", "contro le pantofole"]
+leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro", "per l'illegalità del comunismo"]
 parlamento = ele1 + ele2 + eleap + elettori
 # deputati = 50
 print """ Benvenuto. L'assemblea del Partito Indipendente Milanese ti ha nominato Presidente. Siamo un piccolo partito con un peso minimo nella politica milanese, ma ti abbiamo scelto per far crescere il nostro partito e renderlo uno dei primi. Il nostro obiettivo è di eleggere il Capo dello Stato"""
@@ -31,7 +31,7 @@ def poss():
 	global eleap
 	global sindaci
 	#global deputati
-	poss = random.randint(1,25)
+	poss = random.randint(1,15)
 	if poss == 1:
 		print "Sindaco del Patrito liberale diserta nel Partito Indipendente"
 		sindaci = sindaci + 1
@@ -68,38 +68,51 @@ def poss():
 		elettori = elettori -2 
 		gioco()
 	elif poss == 7:
-		print "Il tuo fornitore sammarinese ti fa degli sconti per l'abbassamento dell'IVA locale. Prendi il 10% dei tuoi soldi"
-		soldi = soldi*1.10
+		print "Una nostra mozione al Parlamento per diminuire le tasse passa! Il Popolo è soddisfatto."
+		elettori = elettori + 2
+		sindaci = sindaci + 3
 		gioco()
 	elif poss == 8:
-		print "Aumenta l'IVA. Perdi il 3 % dei tuoi soldi"
+		print "Alleanza con un partito minore. Ottieniamo i loro sindaci e i loro elettori."
+		elettori = elettori + (eleap/2)
+		sindaci = sindaci + 4
 		gioco()
 	elif poss == 9:
-		print "Vieni recensito da un blog famoso e ottieni molti nuovi ordini!"
-		soldi = soldi*1.5
+		print "Alleanza con un partito Svizzero. Sindaci felici ma elettori meno."
+		sindaci = sindaci + 2
+		elettori = elettori - 1
 		gioco()
 	elif poss == 10:
-		print "Paghi 5000€ un noto blogger per ottenere una buona recensione"
-		soldi = soldi - 50000
+		print "La prostituzione legale è legge, grazie a noi"
+		elettori = elettori + 8
+		gioco()
 	elif poss == 11:
-		print "Un uomo travestito da panino che fa versi da scimmia vicino a", nome,"fa divertire i turisti"
+		print "I giudici riescono a condannare l'imputato della strage di 3 anni fa: Ergastolo!"
 		gioco()
 	elif poss == 12:
-		print "Vai in un postribolo d'alto bordo con un tuo fornitore. Spendi 1500€"
-		soldi = soldi - 1500
+		print "OGM consentiti, è legge. I sindaci non approvano la legge unanime"
+		elettori = elettori +1
+		sindaci = sindaci +2
 		gioco()
 	elif poss == 13:
-		print "Trovi 688€ davanti al negozio"
-		soldi = soldi + 688
+		print "Noi contro i sindaci"
+		print "Per i sindaci, diminiure i loro poteri è deleterio, ma gli elettori apprezzano"
+		elettori = elettori + 5
+		sindaci = sindaci - 4
 		gioco()
 	elif poss == 14:
-		print "Tuo figlio vince la gara di rutti in dialetto indetta dalla scuola"
+		print "Parlamento: È flop"
+		print "Pochissimi elettori per noi alle parlamentari"
+		elettori = elettori - 5
+		sindaci = sindaci - 1
+		flop = flop + 1
 		gioco()
 	elif poss == 15:
-		print "Ottieni un rimborso IVA di 2500€"
-		soldi = soldi + 2500
+		print "Grazie a noi la libertà sopravive"
+		print "La satirà sarà ancora libera"
+		elettori = elettori +2
 		gioco()
-	elif poss == 16:
+	"""elif poss == 16:
 		print "Hai immatricolato male il veicolo, vieni multato dalla Polizia"
 		soldi = soldi*0.97
 		gioco()
@@ -119,9 +132,7 @@ def poss():
 	elif poss == 20:
 		print "Fallisci investimenti. Perdi il 30% dei tuoi soldi"
 		soldi = soldi*0.7
-		gioco()
-	else:
-		gioco()
+		gioco()"""
 	gioco()
 	
 def gioco():
@@ -133,6 +144,9 @@ def gioco():
 	global sindaci
 	global flop
 	global parlamento
+	print ""
+	print ""
+	print ""
 	if turno%5 == 0:
 		flop = 0
 		if parlamento/elettori < 2 and flop < 2:
@@ -141,18 +155,18 @@ Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello 
 		elif parlamento/elettori < 2:
 			print "Salve, Presidente. Abbiamo eletto il nostro nuovo presidente. Aumenterà i nostri elettori."
 			elettori = elettori + 10
-		
+			sindaci = sindaci + 10
+		parlamento = elettori+ele1+ele2+eleap
 	print "Turno", turno
 	print "hai", elettori, "elettori"
 	print "Parlamentari", elettori, "/", parlamento
 	print "Sindaci", sindaci, "/250"
 	print "LEGGE DEL GIORNO:"
-	r = random.randint(1,6)
+	r = random.randint(1,9)
 	print "legge", leggi[r]
 	scelta = raw_input("Vuoi approvare la legge?")
 	scelta = scelta.lower
 	if scelta == "si":
-		del leggi[r]
 		elettori = elettori + random.randint(-5,5)
 		ele1 = ele1 + random.randint(-5,5)
 		ele2 = ele2 + random.randint(-5,5)
@@ -164,5 +178,11 @@ Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello 
 		eleap = eleap + random.randint(-5,5)
 
 	turno = turno +1 
+	if sindaci == 250:
+		print "Grazie Presidente, vogliamo mandarti in campo! Hai vinto, possediamo tutti i comuni ora. Abbiamo eletto il Capo Dello Stato con maggioranza unanime e sei tu l'attuale capo dello stato. Governa bene!"
+	if flop > 5:
+		print "Hai sbagliato troppe volte, mi spiace. Sei licenziato"
+		exit()
+	os.system("clear")
 	poss()
 gioco()		
