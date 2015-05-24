@@ -145,6 +145,7 @@ def gioco():
 	global ele2
 	global eleap
 	global sindaci
+	global nome
 	global flop
 	global parlamento
 	global deputati
