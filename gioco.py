@@ -156,9 +156,10 @@ def gioco():
 		deputati = elettori
 		if parlamento/deputati < 2 and flop < 2:
 			print """Salve signor presidente.
-Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Presidente. Governi bene in questi due anni!"""
-			print "Onori al Capo dello Stato", nome, "!"
+Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Capo. Governi bene in questi due anni!"""
+			print "Onori al Capo dello Stato !"
 			exit()
+			#capostato()
 		elif parlamento/deputati < 2:
 			print "Salve, Presidente. Abbiamo eletto il nostro nuovo presidente. Aumenterà i nostri elettori."
 			elettori = elettori + 10
@@ -177,15 +178,25 @@ Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello 
 	scelta = raw_input("Vuoi approvare la legge?")
 	scelta = scelta.lower
 	if scelta == "si":
-		elettori = elettori + random.randint(-5,5)
-		ele1 = ele1 + random.randint(-5,5)
-		ele2 = ele2 + random.randint(-5,5)
-		eleap = eleap + random.randint(-5,5)
+		elettori = elettori + random.randint(-4,4)
+		ele1 = ele1 + random.randint(-4,4)
+		ele2 = ele2 + random.randint(-4,4)
+		eleap = eleap + random.randint(-4,4)
 	else:
-		elettori = elettori + random.randint(-5,5)
-		ele1 = ele1 + random.randint(-5,5)
-		ele2 = ele2 + random.randint(-5,5)
-		eleap = eleap + random.randint(-5,5)
+		elettori = elettori + random.randint(-3,3)
+		ele1 = ele1 + random.randint(-3,3)
+		ele2 = ele2 + random.randint(-3,3)
+		eleap = eleap + random.randint(-3,3)
+	opzioni = ["si", "no", "si", "no"]
+	j = random.randint(0,3)
+	opz = opzioni[j]
+	if opz == "si":
+		print "Legge approvata!"
+		elettori = elettori + 1
+		#del legge[r]
+	else:
+		print "Legge respinta"
+		elettori = elettori - 1
 
 	turno = turno +1 
 	if sindaci > 240:
