@@ -19,7 +19,7 @@ parlamento = ele1 + ele2 + eleap + elettori
 # deputati = 50
 print """ Benvenuto. L'assemblea del Partito Indipendente Milanese ti ha nominato Presidente. Siamo un piccolo partito con un peso minimo nella politica milanese, ma ti abbiamo scelto per far crescere il nostro partito e renderlo uno dei primi. Il nostro obiettivo è di eleggere il Capo dello Stato"""
 print " Gioco creato da Sciking"
-tuonome = raw_input("Come ti chiami, Presidente?: ")
+nome = raw_input("Come ti chiami, Presidente?: ")
 raw_input("Premi invio per iniziare:")
 os.system("clear")
 def poss():
@@ -33,7 +33,7 @@ def poss():
 	global eleap
 	global sindaci
 	#global deputati
-	poss = random.randint(1,15)
+	poss = random.randint(1,20)
 	if poss == 1:
 		print "Sindaco del Patrito liberale diserta nel Partito Indipendente"
 		sindaci = sindaci + 1
@@ -115,27 +115,29 @@ def poss():
 		print "La satirà sarà ancora libera"
 		elettori = elettori +2
 		gioco()
-	"""elif poss == 16:
-		print "Hai immatricolato male il veicolo, vieni multato dalla Polizia"
-		soldi = soldi*0.97
+	elif poss == 16:
+		print "Guerra in Arabia", nome, ": 'Si tratti con diplomazia'"
+		elettori = elettori + 2
 		gioco()
-	elif poss == 17 and evadi < 40:
-		print "Sei stato denunziato per attività scorrette"
-		print "Sei multato per 100000€"
-		soldi = soldi - 100000
+	elif poss == 17:
+		print "Alea iacta est"
+		print "Finalmente alleati, cosa ne penserà l'elettorato?"
+		elettori = elettori + random.randint(-2,3)
 		gioco()
-	elif poss == 18 and evadi > 50:
-		print "Hai vinto un premio di stato di 25000€"
-		soldi = soldi + 25000
+	elif poss == 18:
+		print "Rivolte: I Ghisa antisommossa gestiscono benissimo la situazione"
+		if parlamento/deputati < 2 and turno%2 == 0:
+			elettori = elettori + 2
 		gioco()
 	elif poss == 19:
-		print "Vinci 1000 € alla lotteria"
-		soldi = soldi +1000
+		print "L'Ambasciatore a Barcellona è Indipendente!"
+		elettori = elettori + 2
+		sindaci = sindaci - 1
 		gioco()
 	elif poss == 20:
-		print "Fallisci investimenti. Perdi il 30% dei tuoi soldi"
-		soldi = soldi*0.7
-		gioco()"""
+		print "I nostri sindaci sono i peggiori, dice uno studio"
+		elettori = elettori - random.randint(1,4)
+		gioco()
 	gioco()
 	
 def gioco():
@@ -157,7 +159,7 @@ def gioco():
 		if parlamento/deputati < 2 and flop < 2:
 			print """Salve signor presidente.
 Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Capo. Governi bene in questi due anni!"""
-			print "Onori al Capo dello Stato !"
+			print "Onori al Capo dello Stato", nome, "!"
 			exit()
 			#capostato()
 		elif parlamento/deputati < 2:
