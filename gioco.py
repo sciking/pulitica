@@ -210,4 +210,4 @@ Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello 
 		exit()
 	os.system("clear")
 	poss()
-gioco()		
+gioco()		# computerblog.ga no alle pantofole :D
