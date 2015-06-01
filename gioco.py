@@ -15,6 +15,10 @@ ele1 = 50
 deputati = 15
 ele2 = 40
 eleap = 5
+pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare", "Movimento delle Libertà", "Casa Riformista", "Il Lume della Ragione"]
+pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte", "Progressismo è Democrazia", "Rivoluzione Popolare"]
+destra = pa[random.randint(0,5)]
+sinistra =  pb[random.randint(0,5)]
 leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per l'annessione dello Stato Emiliano", "per l'istituzione delle regioni", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","contro il nomadismo","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private"]
 parlamento = ele1 + ele2 + eleap + elettori
 # deputati = 50
@@ -187,6 +191,9 @@ Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello 
 	print "hai", elettori, "elettori"
 	print "Parlamentari", deputati, "/", parlamento
 	print "Sindaci", sindaci, "/250"
+	print "Altri:"
+	print "Elettori", destra, ":", ele1
+	print "Elettori", sinistra, ":", ele2
 	print "LEGGE DEL GIORNO:"
 	r = random.randint(1,9)
 	print "legge", leggi[r]
