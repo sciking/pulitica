@@ -19,7 +19,7 @@ pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare", "Movimento delle L
 pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte", "Progressismo è Democrazia", "Rivoluzione Popolare"]
 destra = pa[random.randint(0,5)]
 sinistra =  pb[random.randint(0,5)]
-leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per l'annessione dello Stato Emiliano", "per l'istituzione delle regioni", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","contro il nomadismo","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private"]
+leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per l'annessione dello Stato Emiliano", "per l'istituzione delle regioni", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","contro il nomadismo","per le pari opportunità","per lo ius soli","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
 parlamento = ele1 + ele2 + eleap + elettori
 # deputati = 50
 print """ Benvenuto. L'assemblea del Partito Indipendente Milanese ti ha nominato Presidente. Siamo un piccolo partito con un peso minimo nella politica milanese, ma ti abbiamo scelto per far crescere il nostro partito e renderlo uno dei primi. Il nostro obiettivo è di eleggere il Capo dello Stato"""
@@ -72,20 +72,19 @@ def poss():
 			gioco()
 	elif poss == 4:
 		print "Rinnovo straordinario del nostro Parlamento"
-		parlamento = (ele1+ele2+eleap+elettori)-10
 		deputati = elettori
 		print elettori, "nostri deputati al Parlamento su", parlamento
 		gioco()
 	elif poss == 5:
 		print "Voto nella Dichiarazione di Guerra: Il tuo partito è favorevole, il popolo apprezza"
 		elettori = elettori + 3
-		ele1 = ele1 - 4
-		ele2 = ele2 + 1
+		ele1 = ele1 + 3
+		ele2 = ele2 - 3
 		gioco()
 	elif poss == 6:
 		print "Arrestato un nostro sindaco!"
 		print "Perderemo sicuramente elettorato!"
-		sindaci = sindaci - 2
+		sindaci = sindaci - 1
 		elettori = elettori -2 
 		gioco()
 	elif poss == 7:
@@ -94,9 +93,10 @@ def poss():
 		sindaci = sindaci + 3
 		gioco()
 	elif poss == 8:
-		print "Alleanza con un partito minore. Ottieniamo i loro sindaci e i loro elettori."
-		elettori = elettori + (eleap/2)
-		sindaci = sindaci + 4
+		print "Segretario PIM si masturba in piazza"
+		print "Il miglior modo per perdere elettori"
+		print nome, "tenta di salvare in extremis: 'Nulla sia coperto, \n voteremo si alla richiesta di arresto"
+		elettori = elettori + random.randint(-4, 1)
 		gioco()
 	elif poss == 9:
 		print "Alleanza con un partito Svizzero. Sindaci felici ma elettori meno."
@@ -105,7 +105,7 @@ def poss():
 		gioco()
 	elif poss == 10:
 		print "La prostituzione legale è legge, grazie a noi"
-		elettori = elettori + 8
+		elettori = elettori + 6
 		gioco()
 	elif poss == 11:
 		print "I giudici riescono a condannare l'imputato della strage di 3 anni fa: Ergastolo!"
@@ -113,7 +113,7 @@ def poss():
 	elif poss == 12:
 		print "OGM consentiti, è legge. I sindaci non approvano la legge unanime"
 		elettori = elettori +1
-		sindaci = sindaci +2
+		sindaci = sindaci + random.randint(-1,1)
 		gioco()
 	elif poss == 13:
 		print "Noi contro i sindaci"
@@ -132,9 +132,10 @@ def poss():
 		print "Grazie a noi la libertà sopravive"
 		print "La satirà sarà ancora libera"
 		elettori = elettori +2
+		flop = flop - 1
 		gioco()
 	elif poss == 16:
-		print "Guerra in Arabia", nome, ": 'Si tratti con diplomazia'"
+		print "Guerra in Arabia.", nome, ": 'Si tratti con diplomazia'"
 		elettori = elettori + 2
 		gioco()
 	elif poss == 17:
@@ -144,7 +145,7 @@ def poss():
 		gioco()
 	elif poss == 18:
 		print "Rivolte: I Ghisa antisommossa gestiscono benissimo la situazione"
-		if parlamento/deputati < 2 and turno%2 == 0:
+		if parlamento/deputati < 2:
 			elettori = elettori + 2
 		gioco()
 	elif poss == 19:
@@ -174,10 +175,9 @@ def gioco():
 	if turno%5 == 0:
 		deputati = elettori
 		if parlamento/deputati < 2 and flop < 2:
-			print """Salve signor presidente.
-Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Capo. Governi bene in questi due anni!"""
+			print """Salve signor presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Capo. Governi bene in questi due anni!"""
 			print "Onori al Capo dello Stato", nome, "!"
-			exit()
+			gioco()
 			#capostato()
 		elif parlamento/deputati < 2:
 			print "Salve, Presidente. Abbiamo eletto il nostro nuovo presidente. Aumenterà i nostri elettori."
@@ -203,12 +203,12 @@ Lei non ci serve più come presidente. Siamo riusciti ad eleggere il Capo dello 
 		elettori = elettori + random.randint(-4,4)
 		ele1 = ele1 + random.randint(-4,4)
 		ele2 = ele2 + random.randint(-4,4)
-		eleap = eleap + random.randint(-4,4)
+		eleap = eleap + random.randint(-2,2)
 	else:
 		elettori = elettori + random.randint(-3,3)
 		ele1 = ele1 + random.randint(-3,3)
 		ele2 = ele2 + random.randint(-3,3)
-		eleap = eleap + random.randint(-3,3)
+		eleap = eleap + random.randint(-1,1)
 
 	turno = turno +1 
 	if sindaci > 240:
