@@ -1,6 +1,6 @@
 #!/usr/bin/ python
 # -*- coding: utf-8 -*-
-import os 
+import os
 os.system("clear")
 print "Pulitica"
 print "Il gioco in cui devi entrare in parlamento e vincere le elezioni!"
@@ -51,7 +51,7 @@ def poss():
 		del leggi[r] #decommentare quando ci saranno molte leggi
 	else:
 		print "Legge respinta\n \n"
-		elettori = elettori - 1 
+		elettori = elettori - 1
 	
 	print "L'Indipendente di Milano"
 	#global deputati
@@ -63,11 +63,11 @@ def poss():
 	elif poss == 2:
 		if elettori > 35:
 			print "Elezioni Comunali: Eletti molti sindaci e il Sindaco di Milano!"
-			sindaci = sindaci+ 25
+			sindaci = sindaci+ 15
 			gioco()
 		else:
 			print "Elezioni Comunali: Flop del nostro partito"
-			soldi = sindaci - 10
+			sindaci = sindaci - 7
 			flop = flop + 1
 			gioco()
 	elif poss == 3:
@@ -91,7 +91,7 @@ def poss():
 		print "Arrestato un nostro sindaco!"
 		print "Perderemo sicuramente elettorato!"
 		sindaci = sindaci - 1
-		elettori = elettori -2 
+		elettori = elettori -2
 		gioco()
 	elif poss == 7:
 		print "Una nostra mozione al Parlamento per diminuire le tasse passa! Il Popolo è soddisfatto."
@@ -100,7 +100,6 @@ def poss():
 		gioco()
 	elif poss == 8:
 		print "Segretario PIM si masturba in piazza"
-		print "Il miglior modo per perdere elettori"
 		print nome, "tenta di salvare in extremis: 'Nulla sia coperto, \n voteremo si alla richiesta di arresto"
 		elettori = elettori + random.randint(-4, 1)
 		gioco()
@@ -111,7 +110,7 @@ def poss():
 		gioco()
 	elif poss == 10:
 		print "La prostituzione legale è legge, grazie a noi"
-		elettori = elettori + 6 #prima era 8... suvvia, non siamo così puttanieri :D 
+		elettori = elettori + 6 #prima era 8... suvvia, non siamo così puttanieri :D
 		gioco()
 	elif poss == 11:
 		print "I giudici riescono a condannare l'imputato della strage di 3 anni fa: Ergastolo!"
@@ -162,6 +161,8 @@ def poss():
 	elif poss == 20:
 		print "I nostri sindaci sono i peggiori, dice uno studio"
 		elettori = elettori - random.randint(1,4)
+		ele1 = ele1 + 2
+		ele2 = ele2 + 2
 		gioco()
 	gioco()
 	
@@ -231,7 +232,7 @@ def gioco():
 		ele2 = ele2 + random.randint(-3,3)
 		eleap = eleap + random.randint(-1,1)
 
-	turno = turno +1 
+	turno = turno +1
 	if sindaci > 240:
 		print "Grazie Presidente, vogliamo mandarti in campo! Hai vinto, possediamo quasi tutti i comuni ora. Abbiamo eletto il Capo Dello Stato con maggioranza dei comuni e sei tu l'attuale Capo dello Stato. Governa bene! \n Onori al Capo dello Stato", nome, "!"
 		exit()
@@ -240,8 +241,8 @@ def gioco():
 		print "Hai sbagliato troppe volte, mi spiace. Sei licenziato \n"
 		print "L'Indipendente di Milano \n", nome, "fallisce, ma sarà Sindaco"
 		exit()
-	if elettori < 0:
-		elettori = 1
+	if elettori < 2:
+		elettori = 10
 		flop = flop + 1
 	if ele1 < 5:
 		destra = pa[random.randint(0,5)]
@@ -251,5 +252,6 @@ def gioco():
 		ele2 = 15
 		
 	os.system("clear")
-	poss() 
+	poss()
 gioco()		# computerblog.ga no alle pantofole :D
+
