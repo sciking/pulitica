@@ -10,7 +10,7 @@ turno = 1
 elettori = 15
 flop = 0
 r = 1
-sindaci = 45
+sindaci = 25
 ele1 = 50
 ele2 = 40
 eleap = 5
@@ -63,7 +63,7 @@ def poss():
 	elif poss == 2:
 		if elettori > 35:
 			print "Elezioni Comunali: Eletti molti sindaci e il Sindaco di Milano!"
-			sindaci = sindaci+ 15
+			sindaci = sindaci+ 3
 			gioco()
 		else:
 			print "Elezioni Comunali: Flop del nostro partito"
@@ -71,8 +71,8 @@ def poss():
 			flop = flop + 1
 			gioco()
 	elif poss == 3:
-			print "Elezioni Comunali: Buoni risultati, a noi 20 sindaci"
-			sindaci = sindaci + 20
+			print "Elezioni Comunali: Buoni risultati, a noi altri 5 sindaci"
+			sindaci = sindaci + 5
 			gioco()
 	elif poss == 4:
 		print "Scandalo Scommesse nel Calcio"
@@ -96,7 +96,7 @@ def poss():
 	elif poss == 7:
 		print "Una nostra mozione al Parlamento per diminuire le tasse passa! Il Popolo è soddisfatto."
 		elettori = elettori + 2
-		sindaci = sindaci + 3
+		sindaci = sindaci + 1
 		gioco()
 	elif poss == 8:
 		print "Segretario PIM si masturba in piazza"
@@ -110,6 +110,7 @@ def poss():
 		gioco()
 	elif poss == 10:
 		print "La prostituzione legale è legge, grazie a noi"
+		sindaci = sindaci - 1
 		elettori = elettori + 6 #prima era 8... suvvia, non siamo così puttanieri :D
 		gioco()
 	elif poss == 11:
@@ -123,13 +124,13 @@ def poss():
 	elif poss == 13:
 		print "Noi contro i sindaci"
 		print "Per i sindaci, diminiure i loro poteri è deleterio, ma gli elettori apprezzano"
-		elettori = elettori + 5
-		sindaci = sindaci - 4
+		elettori = elettori + 3
+		sindaci = sindaci - 2
 		gioco()
 	elif poss == 14:
 		print "Parlamento: È flop"
 		print "Pochissimi elettori per noi alle parlamentari"
-		elettori = elettori - 5
+		elettori = elettori - 3
 		sindaci = sindaci - 1
 		flop = flop + 1
 		gioco()
@@ -140,8 +141,9 @@ def poss():
 		flop = flop - 1
 		gioco()
 	elif poss == 16:
-		print "Guerra in Arabia.", nome, ": 'Si tratti con diplomazia'"
+		print "Guerra al terrorismo.", nome, ": 'Si usi l'atomica'"
 		elettori = elettori + 2
+		sindaci = sindaci - 1 
 		gioco()
 	elif poss == 17:
 		print "Alea iacta est"
@@ -191,6 +193,7 @@ def gioco():
 		depd = ele1*parlamento/(elettori+ele1+ele2+eleap)
 		deps = ele2*parlamento/(elettori+ele1+ele2+eleap)
 		depa = eleap*parlamento/(elettori+ele1+ele2+eleap)
+		sindaci = ele1*250/(elettori+ele1+ele2+eleap)
 		if parlamento/deputati < 2 and flop < 2:
 			print """Salve signor presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Capo. Governi bene in questi due anni!"""
 			print "Onori al Capo dello Stato", nome, "!"
@@ -198,7 +201,7 @@ def gioco():
 		elif parlamento/deputati < 2:
 			print "Salve, Presidente. Abbiamo eletto il nostro nuovo presidente. Aumenterà i nostri elettori."
 			elettori = elettori + 10
-			sindaci = sindaci + 10
+			sindaci = sindaci + 3
 	if parlamento/deputati < 2 and turno%2 == 0:
 		print "Hai eletto il governo!"
 		flop = 0
@@ -235,7 +238,7 @@ def gioco():
 	turno = turno +1
 	if sindaci > 240:
 		print "Grazie Presidente, vogliamo mandarti in campo! Hai vinto, possediamo quasi tutti i comuni ora. Abbiamo eletto il Capo Dello Stato con maggioranza dei comuni e sei tu l'attuale Capo dello Stato. Governa bene! \n Onori al Capo dello Stato", nome, "!"
-		exit()
+		gioco()
 		
 	if flop > 5 and livello > 25:
 		print "Hai sbagliato troppe volte, mi spiace. Sei licenziato \n"
@@ -250,8 +253,9 @@ def gioco():
 	if ele2 < 5:
 		sinistra =  pb[random.randint(0,5)]
 		ele2 = 15
+	if eleap < 1:
+		eleap = 3
 		
 	os.system("clear")
 	poss()
 gioco()		# computerblog.ga no alle pantofole :D
-
