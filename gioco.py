@@ -193,7 +193,7 @@ def gioco():
 		depd = ele1*parlamento/(elettori+ele1+ele2+eleap)
 		deps = ele2*parlamento/(elettori+ele1+ele2+eleap)
 		depa = eleap*parlamento/(elettori+ele1+ele2+eleap)
-		sindaci = ele1*250/(elettori+ele1+ele2+eleap)
+		sindaci = elettori*250/(elettori+ele1+ele2+eleap)
 		if parlamento/deputati < 2 and flop < 2:
 			print """Salve signor presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Capo. Governi bene in questi due anni!"""
 			print "Onori al Capo dello Stato", nome, "!"
@@ -253,8 +253,8 @@ def gioco():
 	if ele2 < 5:
 		sinistra =  pb[random.randint(0,5)]
 		ele2 = 15
-	if eleap < 1:
-		eleap = 3
+	if eleap < 0:
+		eleap = 0
 		
 	os.system("clear")
 	poss()
