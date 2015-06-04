@@ -1,4 +1,3 @@
-
 #!/usr/bin/ python
 # -*- coding: utf-8 -*-
 import os
@@ -12,13 +11,14 @@ elettori = 15
 flop = 0
 r = 1
 sindaci = 25
+difficile = "abc" 
 ele1 = 50
 ele2 = 40
 eleap = 5
-pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare", "Movimento delle Libertà", "Casa Riformista", "Il Lume della Ragione"]
-pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte", "Progressismo è Democrazia", "Rivoluzione Popolare"]
-destra = pa[random.randint(0,5)]
-sinistra =  pb[random.randint(0,5)]
+pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare", "Movimento delle Libertà", "Casa Riformista", "Il Lume della Ragione","Patrito contro le Pantofole con Michele Redeisci", "Casa delle Riforme", "Föra di ball! Milano Libera"]
+pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte", "Progressismo è Democrazia", "Rivoluzione Popolare", "MoviMento Quattro Soli", "Equità nelle ricchezze", "Alleanza di Sinistra"]
+destra = pa[random.randint(0,8)]
+sinistra =  pb[random.randint(0,8)]
 leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per l'annessione dello Stato Emiliano", "per l'istituzione delle regioni", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","contro il nomadismo","per le pari opportunità","per lo ius soli","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
 emergenza = tuple(leggi)
 parlamento = 220
@@ -29,6 +29,8 @@ depa = eleap*parlamento/(elettori+ele1+ele2+eleap)
 # deputati = 50
 print """ Benvenuto. L'assemblea del Partito Indipendente Milanese ti ha nominato Presidente. Siamo un piccolo partito con un peso minimo nella politica milanese, ma ti abbiamo scelto per far crescere il nostro partito e renderlo uno dei primi. Il nostro obiettivo è di eleggere il Capo dello Stato"""
 print " Gioco creato da Sciking"
+difficile = raw_input("Vuoi giocare in modalità facile, medio o difficile? ")
+difficile = difficile.lower()
 nome = raw_input("Come ti chiami, Presidente?: ")
 raw_input("Premi invio per iniziare:")
 os.system("clear")
@@ -56,7 +58,7 @@ def poss():
 	
 	print "L'Indipendente di Milano"
 	#global deputati
-	poss = random.randint(1,20)
+	poss = random.randint(1,25)
 	if poss == 1:
 		print "Sindaco del Patrito liberale diserta nel Partito Indipendente"
 		sindaci = sindaci + 1
@@ -167,6 +169,41 @@ def poss():
 		ele1 = ele1 + 2
 		ele2 = ele2 + 2
 		gioco()
+	elif poss == 21:
+		print "Segretario", sinistra, ":'gay nei forni'"
+		print "Elettori a picco, noi e le destre di certo non siamo tristi"
+		ele2 = ele2 - 6
+		ele1 = ele1 + 3
+		elettori = elettori + 3
+		gioco()
+	elif poss == 22:
+		print "Arrestata moglie del presidente del", destra
+		ele1 = ele1 - 2
+		ele2 = ele2 + 2
+		gioco()
+	elif poss == 23:
+		print nome, "inciampa e urla 'mad***a troia'"
+		print "Forse non è così male..."
+		elettori = elettori + 2
+		ele2 = ele2 + 1
+		ele1 = ele1 - 1
+		gioco()
+	elif poss == 24:
+		print "Destra spaccata: Nasce nuovo movimento"
+		print "Ne beneficia specialmente", sinistra
+		ele1 = ele1 - 8
+		ele2 = ele2 + 4
+		eleap = eleap + 1
+		elettori = elettori + 3
+		gioco()
+	elif poss == 25:
+		print "Elettori sempre più attivi"
+		print "Astensionsimo incredibilmente basso"
+		ele1 = ele1 + random.randint(1,5)
+		ele2 = ele2 + random.randint(1,5)
+		eleap = eleap + random.randint(1,5)
+		elettori = elettori + random.randint(1,5)
+		gioco()
 	gioco()
 	
 def gioco():
@@ -256,6 +293,12 @@ def gioco():
 		ele2 = 15
 	if eleap < 0:
 		eleap = 0
+	if turno > 50 and difficile == "difficile":
+		print "Il gioco è finito!"
+	if turno > 100 and difficile == "medio":
+		print "Il gioco è finito!"
+	if turno > 150 and difficile == "facile":
+		print "Il gioco è finito!"
 		
 	os.system("clear")
 	poss()
