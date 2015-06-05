@@ -19,7 +19,7 @@ pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare", "Movimento delle L
 pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte", "Progressismo è Democrazia", "Rivoluzione Popolare", "MoviMento Quattro Soli", "Equità nelle ricchezze", "Alleanza di Sinistra"]
 destra = pa[random.randint(0,8)]
 sinistra =  pb[random.randint(0,8)]
-leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per l'annessione dello Stato Emiliano", "per l'istituzione delle regioni", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per tutelare il risotto alla milanese","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","contro il nomadismo","per le pari opportunità","per lo ius soli","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
+leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per l'annessione dello Stato Emiliano", "per l'istituzione delle regioni", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","contro la prostituzione minorile","per aprire un centro di integrazione per gli immigrati","contro le droghe pesanti","per promuovere la cura dalla ludopatia","contro i prof politicizzati","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per tutelare il risotto alla milanese","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","contro il nomadismo","per le pari opportunità","per lo ius soli","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
 emergenza = tuple(leggi)
 parlamento = 220
 deputati = elettori*parlamento/(elettori+ele1+ele2+eleap)# elettori : totale = x : parlamento
@@ -29,8 +29,8 @@ depa = eleap*parlamento/(elettori+ele1+ele2+eleap)
 # deputati = 50
 print """ Benvenuto. L'assemblea del Partito Indipendente Milanese, visti i tuoi eccellenti 10 anni di carriera tutta nel PIM, ti ha nominato Presidente. Siamo un piccolo partito con un peso minimo nella politica milanese, ma ti abbiamo scelto per far crescere il nostro partito e renderlo uno dei primi. Il nostro obiettivo è di eleggere il Capo dello Stato. Ricorda che noi siamo la terza sponda: A metà tra la sinistra e la destra. Conserva questo ideale, ma non dimenticarlo: Il mondo cambia."""
 print " Gioco creato da Sciking"
-difficile = raw_input("Vuoi giocare in modalità facile, medio o difficile? ")
-difficile = difficile.lower()
+#difficile = raw_input("Vuoi giocare in modalità facile, medio o difficile? ")
+#difficile = difficile.lower()
 nome = raw_input("Come ti chiami, Presidente?: ")
 raw_input("Premi invio per iniziare:")
 os.system("clear")
@@ -69,7 +69,7 @@ def poss():
 	
 	print "L'Indipendente di Milano"
 	#global deputati
-	poss = random.randint(1,25)
+	poss = random.randint(1,30)
 	if poss == 1:
 		print "Sindaco del Patrito liberale diserta nel Partito Indipendente"
 		sindaci = sindaci + 1
@@ -78,10 +78,11 @@ def poss():
 		if elettori > 35:
 			print "Elezioni Comunali: Eletti molti sindaci e il Sindaco di Milano!"
 			sindaci = sindaci+ 3
+			flop = flop - 1
 			gioco()
 		else:
 			print "Elezioni Comunali: Flop del nostro partito"
-			sindaci = sindaci - 7
+			sindaci = sindaci - 4
 			flop = flop + 1
 			gioco()
 	elif poss == 3:
@@ -111,6 +112,8 @@ def poss():
 		print "Una nostra mozione al Parlamento per diminuire le tasse passa! Il Popolo è soddisfatto."
 		elettori = elettori + 2
 		sindaci = sindaci + 1
+		ele1 = ele1 - 2
+		ele2 = ele2 + 2
 		gioco()
 	elif poss == 8:
 		print "Segretario PIM si masturba in piazza"
@@ -195,7 +198,7 @@ def poss():
 	elif poss == 23:
 		print nome, "inciampa e urla 'mad***a troia'"
 		print "Forse non è così male..."
-		elettori = elettori + 2
+		elettori = elettori + random.randint(-1,3)
 		ele2 = ele2 + 1
 		ele1 = ele1 - 1
 		gioco()
@@ -214,6 +217,41 @@ def poss():
 		ele2 = ele2 + random.randint(1,5)
 		eleap = eleap + random.randint(1,5)
 		elettori = elettori + random.randint(1,5)
+		gioco()
+	elif poss == 26:
+		print sinistra, "beccata ad accettare mazzette"
+		print "Arrestato il segretario: Elettori a picco."
+		ele2 = ele2 - random.randint(8,12)
+		ele1 = ele1 + random.randint(4,6)
+		elettori = elettori + random.randint(4,6)
+		gioco()
+	elif poss == 27:
+		print "Scie idriche: Non sono una minaccia"
+		if sinistra == "MoviMento Quattro Soli":
+			print "Noi e le destre lo abbiamo detto, ma", sinistra, "grida al complotto"
+			elettori = elettori + 1
+		elif destra == "Unione Popolare":
+			print "Sinistra e PIM unanimi, ma l'UP ha dubbi ambientali"
+			ele2 = ele2 + 2
+		gioco()
+	elif poss == 28:
+		print "Scandalo nel", destra, ": Manomissioni di farmaci per soldi"
+		print "Il PM chiede 9 anni di reclusione per il loro presidente"
+		ele1 = ele1 - random.randint(8,12)
+		ele2 = ele2 + random.randint(4,6)
+		elettori = elettori + random.randint(4,6)
+		gioco()
+	elif poss == 29:
+		print "Giornata nera del PIM: Corruzione, adulterazioni e contrabbando"
+		print nome,"multato per 3000 Ambrogi, il segretario condannato a 6 mesi"
+		elettori = elettori - 6
+		ele1 = ele1 + 2
+		ele2 = ele2 + 3
+		eleap = eleap + 1
+		gioco()
+	elif poss == 30:
+		print "Fiera del Cosplay a Milano: Partecipa divertito l'Ambasciatore dell'Impero del Giappone"
+		print nome, ": 'Bello vedere le nuove generazioni appassionate alla cultura orientale'" #kurumo te lo dedico <3
 		gioco()
 	gioco()
 	
