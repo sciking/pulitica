@@ -19,7 +19,7 @@ pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare", "Movimento delle L
 pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte", "Progressismo è Democrazia", "Rivoluzione Popolare", "MoviMento Quattro Soli", "Equità nelle ricchezze", "Alleanza di Sinistra"]
 destra = pa[random.randint(0,8)]
 sinistra =  pb[random.randint(0,8)]
-leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per l'annessione dello Stato Emiliano", "per l'istituzione delle regioni", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","contro il nomadismo","per le pari opportunità","per lo ius soli","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
+leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per l'annessione dello Stato Emiliano", "per l'istituzione delle regioni", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per tutelare il risotto alla milanese","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","contro il nomadismo","per le pari opportunità","per lo ius soli","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
 emergenza = tuple(leggi)
 parlamento = 220
 deputati = elettori*parlamento/(elettori+ele1+ele2+eleap)# elettori : totale = x : parlamento
@@ -27,7 +27,7 @@ depd = ele1*parlamento/(elettori+ele1+ele2+eleap)
 deps = ele2*parlamento/(elettori+ele1+ele2+eleap)
 depa = eleap*parlamento/(elettori+ele1+ele2+eleap)
 # deputati = 50
-print """ Benvenuto. L'assemblea del Partito Indipendente Milanese ti ha nominato Presidente. Siamo un piccolo partito con un peso minimo nella politica milanese, ma ti abbiamo scelto per far crescere il nostro partito e renderlo uno dei primi. Il nostro obiettivo è di eleggere il Capo dello Stato"""
+print """ Benvenuto. L'assemblea del Partito Indipendente Milanese, visti i tuoi eccellenti 10 anni di carriera tutta nel PIM, ti ha nominato Presidente. Siamo un piccolo partito con un peso minimo nella politica milanese, ma ti abbiamo scelto per far crescere il nostro partito e renderlo uno dei primi. Il nostro obiettivo è di eleggere il Capo dello Stato. Ricorda che noi siamo la terza sponda: A metà tra la sinistra e la destra. Conserva questo ideale, ma non dimenticarlo: Il mondo cambia."""
 print " Gioco creato da Sciking"
 difficile = raw_input("Vuoi giocare in modalità facile, medio o difficile? ")
 difficile = difficile.lower()
@@ -40,11 +40,22 @@ def poss():
 	global ele1
 	global deputati
 	global r
+	global turno
 	global ele2
 	global leggi
 	global parlamento
 	global eleap
 	global sindaci
+	"""if turno > 50 and difficile == "difficile":
+		print "Il gioco è finito!"
+		exit()
+	if turno > 100 and difficile == "medio":
+		print "Il gioco è finito!"
+		exit()
+	if turno > 150 and difficile == "facile":
+		print "Il gioco è finito!"
+		exit()
+	print "RILASCIA UNA DICHIARAZIONE"""
 	opzioni = ["si", "no", "si", "no", "no"]
 	j = random.randint(0,4)
 	opz = opzioni[j]
@@ -293,12 +304,6 @@ def gioco():
 		ele2 = 15
 	if eleap < 0:
 		eleap = 0
-	if turno > 50 and difficile == "difficile":
-		print "Il gioco è finito!"
-	if turno > 100 and difficile == "medio":
-		print "Il gioco è finito!"
-	if turno > 150 and difficile == "facile":
-		print "Il gioco è finito!"
 		
 	os.system("clear")
 	poss()
