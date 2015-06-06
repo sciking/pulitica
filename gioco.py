@@ -80,7 +80,7 @@ def poss():
 	print "L'Indipendente di Milano"
 	#global deputati
 	random.shuffle(leggi) #dovrebbe mescolare ad mentulam canis la lista ma el va minga trop ben...
-	poss = random.randint(1,35)
+	poss = random.randint(1,40)
 	if poss == 1:
 		print "Sindaco del Patrito liberale diserta nel Partito Indipendente"
 		sindaci = sindaci + 1
@@ -174,8 +174,8 @@ def poss():
 		sindaci = sindaci - 1 
 		gioco()
 	elif poss == 17:
-		print "Alea iacta est"
-		print "Finalmente alleati, cosa ne penserà l'elettorato?"
+		print "Guardia Liberale entra nel PIM"
+		print "L'organizzazione non è ben vista a Milano, ma ha molti votanti"
 		elettori = elettori + random.randint(-2,3)
 		gioco()
 	elif poss == 18:
@@ -244,6 +244,8 @@ def poss():
 		elif destra == "Unione Popolare":
 			print "Sinistra e PIM unanimi, ma l'UP ha dubbi ambientali"
 			ele2 = ele2 + 2
+		else:
+			print "Partiti concordano unanimi"
 		gioco()
 	elif poss == 28:
 		print "Scandalo nel", destra, ": Manomissioni di farmaci per soldi"
@@ -292,6 +294,49 @@ def poss():
 		ele2 = ele2 + random.randint(-3,3)
 		elettori = elettori + random.randint(-3,3)
 		gioco()
+	elif poss == 36:
+		print "Segretario Partito Vegan Animalaro:Si spetimenti sui politici"
+		print "Candidato Comico dell'anno:", sd, "annunzia querela"
+		gioco()
+	elif poss == 37:
+		print "Cura Di Vacio, parlamento approva mozione: Inefficace"
+		print "Ma gli elettori non ci credono"
+		ele1 = ele1 - 3
+		ele2 = ele2 - 3
+		eleap = eleap - 1
+		elettori = elettori - 3
+		gioco()
+	elif poss == 38:
+		print "Truffa: Mozione del PIM e di", sinistra, "aumenta le pene per truffa a incapaci"
+		ele1 = ele1 - 4
+		ele2 = ele2 + 3
+		eleap = eleap - 1
+		elettori = elettori + 2
+		gioco()
+	elif poss == 39:
+		print "Scandalo a Vimodrone"
+		if livello%2 == 0:
+			print "Sindaco", sinistra, "accetta mazzetta da 20'000 Ambrogi per campo sportivo"
+			ele1 = ele1 + 3
+			ele2 = ele2 - 5
+			elettori = elettori + 2
+			gioco()
+		else:
+			print "Sindaco", destra, "accetta mazzetta da 35'000 Ambrogi per l'ospedale"
+			ele1 = ele1 - 5
+			ele2 = ele2 + 2
+			elettori = elettori - 3
+			gioco()
+	elif poss == 40:
+		print "Governo salva il condannato a morte in Arabia"
+		print "Sconterà tre anni a Milano"
+		if premier == sd:
+			ele1 = ele1 + 3
+		if premier == ss:
+			ele2  = ele2 + 3
+		if premier == nome:
+			elettori = elettori + 3
+		gioco()
 	gioco()
 	
 def gioco():
@@ -314,7 +359,7 @@ def gioco():
 	global parlamento
 	global leggi
 	global deputati
-	print " \n \n \n "
+	print " \n \n"
 	if turno%5 == 0:
 		deputati = elettori*parlamento/(elettori+ele1+ele2+eleap)# elettori : totale = x : parlamento
 		depd = ele1*parlamento/(elettori+ele1+ele2+eleap)
