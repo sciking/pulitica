@@ -19,16 +19,17 @@ dichiarazionipol = ["Creeremo il sistema presidenziale"]
 dichiarazionieco = ["Abbasseremo le tasse"]
 dichiarazionieti = ["Si all'aborto incondizionato","La vera vittoria non è introdurre il matrimonio gay, ma abolirlo per tutti!" ]
 dichiarazionialtro = ["Milano vincerà i mondiali del folball!"]
-nomi = ["Mario","Alessio","Gaetano","Alessandro","Michele","Giorgio"]
-cognomi = ["Brambilla","Fumagalli","Rossi","Verdi","Pessotti","Bianchi"]
-sd = nomi[random.randint(0,5)]+ " " + cognomi[random.randint(0,5)]
-ss = nomi[random.randint(0,5)]+ " " + cognomi[random.randint(0,5)]
-premier = nomi[random.randint(0,5)]+ " " + cognomi[random.randint(0,5)]
+nomi = ["Mario","Alessio","Gaetano","Alessandro","Michele","Giorgio","Matteo","Silvio","Alberto","Gianni","Teresio","Piergastone","Diego","Giulio","Giuàn"]
+cognomi = ["Brambilla","Fumagalli","Rossi","Verdi","Pessotti","Bianchi","Bernasca","Salvino","Sensi","Olivetti","Vignana","Carminati","Colombo","Lombardi","Toccaferro"]
+sd = nomi[random.randint(0,14)]+ " " + cognomi[random.randint(0,14)]
+ss = nomi[random.randint(0,14)]+ " " + cognomi[random.randint(0,14)]
+premier = nomi[random.randint(0,14)]+ " " + cognomi[random.randint(0,14)]
+si = nomi[random.randint(0,14)]+ " " + cognomi[random.randint(0,14)]
 pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare", "Movimento delle Libertà", "Casa Riformista", "Il Lume della Ragione","Patrito contro le Pantofole con Michele Redeisci", "Casa delle Riforme", "Föra di ball! Milano Libera"]
 pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte", "Progressismo è Democrazia", "Rivoluzione Popolare", "MoviMento Quattro Soli", "Equità nelle ricchezze", "Alleanza di Sinistra"]
 destra = pa[random.randint(0,8)]
 sinistra =  pb[random.randint(0,8)]
-leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per l'annessione dello Stato Emiliano", "per l'istituzione delle regioni","contro il reato di furto con scasso","contro le mense sporche", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","contro la prostituzione minorile","per aprire un centro di integrazione per gli immigrati","per dare un premio di 500 Ambrogi ai collezionisti","contro le droghe pesanti","per promuovere la cura dalla ludopatia","contro i prof politicizzati","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per tutelare il risotto alla milanese","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","per insegnare la buona educazione ai bambini","contro il nomadismo","per le pari opportunità","per lo ius soli","per alzare il prezzo delle sigarette","per mettere nuove misure di sicurezza ai danè","per contrastare il razzismo","per introdurre la prigione per vandalismo","per aiutare i milanesi prima degli altri","per la limitazione delle armi bianche","per migliorare l'esercito di milizia","contro le nudità all'Idroscalo","per introdurre","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
+leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo","per diminuire l'età pensionabile","per ufficializzare la lingua piemontese","per collegare Milano a Varese via Navigli","per collegare via fiume Milano e Ivrea","per creare una rete sociale di stato","per migliorare le armi dei ghisa","per esportare la piadina romagnola nel mondo","per costruire una Reggia Presidenziale a Codigoro","contro il plagio", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per creare la Regione Autonoma Emiliana", "per l'istituzione delle regioni","contro il reato di furto con scasso","contro le mense sporche", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","contro la prostituzione minorile","per aprire un centro di integrazione per gli immigrati","per dare un premio di 500 Ambrogi ai collezionisti","contro le droghe pesanti","per promuovere la cura dalla ludopatia","contro i prof politicizzati","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per tutelare il risotto alla milanese","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","per insegnare la buona educazione ai bambini","contro il nomadismo","per le pari opportunità","per lo ius soli","per alzare il prezzo delle sigarette","per mettere nuove misure di sicurezza ai danè","per contrastare il razzismo","per introdurre la prigione per vandalismo","per aiutare i milanesi prima degli altri","per la limitazione delle armi bianche","per migliorare l'esercito di milizia","contro le nudità all'Idroscalo","per introdurre","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
 emergenza = tuple(leggi)
 parlamento = 220
 deputati = elettori*parlamento/(elettori+ele1+ele2+eleap)# elettori : totale = x : parlamento
@@ -366,21 +367,32 @@ def gioco():
 		deps = ele2*parlamento/(elettori+ele1+ele2+eleap)
 		depa = eleap*parlamento/(elettori+ele1+ele2+eleap)
 		sindaci = elettori*250/(elettori+ele1+ele2+eleap)
-		if parlamento/deputati < 2 and flop < 2:
+		if parlamento/deputati < 2 and flop < 2 and decas != 0:
 			print """Salve signor presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Capo. Governi bene in questi due anni!"""
 			print "Onori al Capo dello Stato", nome, "!"
+			caput = 1
+			decas = 1 #a milano solo un mandato per volta, quindi...
 			#capostato()
 		elif parlamento/deputati < 2:
 			print "Salve, Presidente. Abbiamo eletto il nostro nuovo presidente. Aumenterà i nostri elettori."
 			elettori = elettori + 10
 			sindaci = sindaci + 3
+			caput = 0
+			decas = 0
+		else:
+			caput = 0
+			decas = 0
 	if turno%5 == 0:
 		#calcola chi è al governo
 		if parlamento/deputati < 2:
 			print "Hai eletto il governo!"
 			flop = 0
 			elettori = elettori + 3
-			premier = nome
+			if caput == 0:
+				premier = nome
+			else:
+				premier = si
+				print "Nominato premier il nostro segretario"
 		elif parlamento/depd < 2:
 			print "L'Indipendente di Milano \n Destra al Governo"
 			ele1 = ele1 + 3
@@ -391,7 +403,7 @@ def gioco():
 			premier = ss
 		else:
 			print "Nessun eletto: Capo dello Stato nomina governo tecnico"
-			premier = nomi[random.randint(0,5)]+ " " + cognomi[random.randint(0,5)]
+			premier = nomi[random.randint(0,14)]+ " " + cognomi[random.randint(0,14)]
 		
 	print "Turno", turno
 	print "Capo del Governo:", premier
@@ -443,6 +455,9 @@ def gioco():
 		ele2 = 15
 	if eleap < 0:
 		eleap = 0
+	if turno%25 == 0:
+		sd = nomi[random.randint(0,14)]+ " " + cognomi[random.randint(0,14)]
+		ss = nomi[random.randint(0,14)]+ " " + cognomi[random.randint(0,14)]
 		
 	os.system("clear")
 	poss()
