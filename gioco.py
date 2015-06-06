@@ -15,11 +15,20 @@ difficile = "abc"
 ele1 = 50
 ele2 = 40
 eleap = 5
+dichiarazionipol = ["Creeremo il sistema presidenziale"]
+dichiarazionieco = ["Abbasseremo le tasse"]
+dichiarazionieti = ["Si all'aborto incondizionato","La vera vittoria non è introdurre il matrimonio gay, ma abolirlo per tutti!" ]
+dichiarazionialtro = ["Milano vincerà i mondiali del folball!"]
+nomi = ["Mario","Alessio","Gaetano","Alessandro","Michele","Giorgio"]
+cognomi = ["Brambilla","Fumagalli","Rossi","Verdi","Pessotti","Bianchi"]
+sd = nomi[random.randint(0,5)]+ " " + cognomi[random.randint(0,5)]
+ss = nomi[random.randint(0,5)]+ " " + cognomi[random.randint(0,5)]
+premier = nomi[random.randint(0,5)]+ " " + cognomi[random.randint(0,5)]
 pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare", "Movimento delle Libertà", "Casa Riformista", "Il Lume della Ragione","Patrito contro le Pantofole con Michele Redeisci", "Casa delle Riforme", "Föra di ball! Milano Libera"]
 pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte", "Progressismo è Democrazia", "Rivoluzione Popolare", "MoviMento Quattro Soli", "Equità nelle ricchezze", "Alleanza di Sinistra"]
 destra = pa[random.randint(0,8)]
 sinistra =  pb[random.randint(0,8)]
-leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per l'annessione dello Stato Emiliano", "per l'istituzione delle regioni", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","contro la prostituzione minorile","per aprire un centro di integrazione per gli immigrati","contro le droghe pesanti","per promuovere la cura dalla ludopatia","contro i prof politicizzati","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per tutelare il risotto alla milanese","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","contro il nomadismo","per le pari opportunità","per lo ius soli","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
+leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per l'annessione dello Stato Emiliano", "per l'istituzione delle regioni","contro il reato di furto con scasso","contro le mense sporche", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","contro la prostituzione minorile","per aprire un centro di integrazione per gli immigrati","per dare un premio di 500 Ambrogi ai collezionisti","contro le droghe pesanti","per promuovere la cura dalla ludopatia","contro i prof politicizzati","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per tutelare il risotto alla milanese","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","per insegnare la buona educazione ai bambini","contro il nomadismo","per le pari opportunità","per lo ius soli","per alzare il prezzo delle sigarette","per mettere nuove misure di sicurezza ai danè","per contrastare il razzismo","per introdurre la prigione per vandalismo","per aiutare i milanesi prima degli altri","per la limitazione delle armi bianche","per migliorare l'esercito di milizia","contro le nudità all'Idroscalo","per introdurre","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
 emergenza = tuple(leggi)
 parlamento = 220
 deputati = elettori*parlamento/(elettori+ele1+ele2+eleap)# elettori : totale = x : parlamento
@@ -54,8 +63,9 @@ def poss():
 		exit()
 	if turno > 150 and difficile == "facile":
 		print "Il gioco è finito!"
-		exit()
-	print "RILASCIA UNA DICHIARAZIONE"""
+		exit()"""
+	"""print "RILASCIA UNA DICHIARAZIONE"
+	print "1)", dichiarazionepol[random.randint(0,1)]""" #selezione random
 	opzioni = ["si", "no", "si", "no", "no"]
 	j = random.randint(0,4)
 	opz = opzioni[j]
@@ -69,7 +79,8 @@ def poss():
 	
 	print "L'Indipendente di Milano"
 	#global deputati
-	poss = random.randint(1,30)
+	random.shuffle(leggi) #dovrebbe mescolare ad mentulam canis la lista ma el va minga trop ben...
+	poss = random.randint(1,35)
 	if poss == 1:
 		print "Sindaco del Patrito liberale diserta nel Partito Indipendente"
 		sindaci = sindaci + 1
@@ -253,6 +264,34 @@ def poss():
 		print "Fiera del Cosplay a Milano: Partecipa divertito l'Ambasciatore dell'Impero del Giappone"
 		print nome, ": 'Bello vedere le nuove generazioni appassionate alla cultura orientale'" #kurumo te lo dedico <3
 		gioco()
+	elif poss == 31:
+		print "Giustino Ciucci a Milano: I Giovani non si recheranno al voto"
+		print "Molto colpiti i partiti che puntano sui giovani"
+		ele1 = ele1 - 2
+		ele2 = ele2 - 3
+		eleap = eleap - 1
+		elettori = elettori - 2
+		gioco()
+	elif poss == 32:
+		print "Pena di morte incostituzionale: Noi l'abbiamo detto"
+		elettori = elettori + 2
+		gioco()
+	elif poss == 33:
+		print "Droga Leun, nuova piaga: I Partiti uniti per combatterla"
+		print "Summit tra", nome,",",ss," e ", sd, "per creare provvedimenti contro le droghe"	
+		ele1 = ele1 + 3
+		ele2 = ele2 + 3
+		eleap = eleap + 1
+		elettori = elettori + 3
+		gioco()
+	elif poss == 34:
+		print "Milano vince i campionati mondiali del folball!"
+	elif poss == 35:
+		print "Movimenti in rete: Elettori molto confusi"
+		ele1 = ele1 - random.randint(-3,3)
+		ele2 = ele2 + random.randint(-3,3)
+		elettori = elettori + random.randint(-3,3)
+		gioco()
 	gioco()
 	
 def gioco():
@@ -268,6 +307,7 @@ def gioco():
 	global flop
 	global deps
 	global depa
+	global premier
 	global depd
 	global sinistra
 	global destra
@@ -289,11 +329,27 @@ def gioco():
 			print "Salve, Presidente. Abbiamo eletto il nostro nuovo presidente. Aumenterà i nostri elettori."
 			elettori = elettori + 10
 			sindaci = sindaci + 3
-	if parlamento/deputati < 2 and turno%2 == 0:
-		print "Hai eletto il governo!"
-		flop = 0
-		elettori = elettori + 3
+	if turno%5 == 0:
+		#calcola chi è al governo
+		if parlamento/deputati < 2:
+			print "Hai eletto il governo!"
+			flop = 0
+			elettori = elettori + 3
+			premier = nome
+		elif parlamento/depd < 2:
+			print "L'Indipendente di Milano \n Destra al Governo"
+			ele1 = ele1 + 3
+			premier = sd
+		elif parlamento/deps < 2:
+			print "L'Indipendente di Milano \n Sinistra al governo"
+			ele2 = ele2 + 3
+			premier = ss
+		else:
+			print "Nessun eletto: Capo dello Stato nomina governo tecnico"
+			premier = nomi[random.randint(0,5)]+ " " + cognomi[random.randint(0,5)]
+		
 	print "Turno", turno
+	print "Capo del Governo:", premier
 	print "hai", elettori, "elettori"
 	print "Parlamentari Partito Indipendente:", deputati, "/", parlamento
 	print "Parlamentari", destra, ":" ,depd, "/", parlamento
@@ -306,7 +362,7 @@ def gioco():
 	print "LEGGE DEL GIORNO:"
 	try:
 		r = random.randint(1,6)
-		print "legge", leggi[r]
+		print "Legge", leggi[r]
 	except:
 		leggi = list(emergenza)
 	scelta = raw_input("Vuoi approvare la legge?")
