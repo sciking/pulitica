@@ -315,7 +315,7 @@ def poss():
 		gioco()
 	elif poss == 39:
 		print "Scandalo a Vimodrone"
-		if livello%2 == 0:
+		if turno%2 == 0:
 			print "Sindaco", sinistra, "accetta mazzetta da 20'000 Ambrogi per campo sportivo"
 			ele1 = ele1 + 3
 			ele2 = ele2 - 5
