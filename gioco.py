@@ -10,10 +10,11 @@ turno = 1
 elettori = 15
 flop = 0
 r = 1
-sindaci = 25
+sindaci = 300
 difficile = "abc" 
 ele1 = 50
 ele2 = 40
+altripaesi = ["Impero di Roma","Puglia","Lazio e Campania","Stato della Chiesa"]
 eleap = 5
 dichiarazionipol = ["Creeremo il sistema presidenziale"]
 dichiarazionieco = ["Abbasseremo le tasse"]
@@ -50,6 +51,9 @@ def poss():
 	global ele1
 	global deputati
 	global r
+	global ss
+	global sd
+	global si
 	global turno
 	global ele2
 	global leggi
@@ -81,7 +85,7 @@ def poss():
 	print "L'Indipendente di Milano"
 	#global deputati
 	random.shuffle(leggi) #dovrebbe mescolare ad mentulam canis la lista ma el va minga trop ben...
-	poss = random.randint(1,40)
+	poss = random.randint(1,45)
 	if poss == 1:
 		print "Sindaco del Patrito liberale diserta nel Partito Indipendente"
 		sindaci = sindaci + 1
@@ -110,6 +114,10 @@ def poss():
 		gioco()
 	elif poss == 5:
 		print "Voto nella Dichiarazione di Guerra: Il tuo partito è favorevole, il popolo apprezza"
+		if turno % 2 == 0:
+			print "Non vi sarà guerra con", altripaesi[random.randint(0,3)], "però"
+		else:
+			print "Sarà guerra con", altripaesi[random.randint(0,3)]
 		elettori = elettori + 3
 		ele1 = ele1 + 3
 		ele2 = ele2 - 3
@@ -268,7 +276,7 @@ def poss():
 		print nome, ": 'Bello vedere le nuove generazioni appassionate alla cultura orientale'" #kurumo te lo dedico <3
 		gioco()
 	elif poss == 31:
-		print "Giustino Ciucci a Milano: I Giovani non si recheranno al voto"
+		print "Giustino Ciucci a Milano: I Giovani non si recheranno al voto" 
 		print "Molto colpiti i partiti che puntano sui giovani"
 		ele1 = ele1 - 2
 		ele2 = ele2 - 3
@@ -288,7 +296,7 @@ def poss():
 		elettori = elettori + 3
 		gioco()
 	elif poss == 34:
-		print "Milano vince i campionati mondiali del folball!"
+		print "Milano vince i campionati mondiali del folball!" #per chi non lo sapesse el folball è il calcio in milanese
 	elif poss == 35:
 		print "Movimenti in rete: Elettori molto confusi"
 		ele1 = ele1 - random.randint(-3,3)
@@ -296,8 +304,8 @@ def poss():
 		elettori = elettori + random.randint(-3,3)
 		gioco()
 	elif poss == 36:
-		print "Segretario Partito Vegan Animalaro:Si spetimenti sui politici"
-		print "Candidato Comico dell'anno:", sd, "annunzia querela"
+		print "Segretario Partito Vegan Animalaro: Si spetimenti sui politici"
+		print "Candidato Comico dell'anno:", sd, "annunzia querela" #in un paese ideale i vari "STOP VIVISEZZIONE" sarebbero candidati allo stesso premio
 		gioco()
 	elif poss == 37:
 		print "Cura Di Vacio, parlamento approva mozione: Inefficace"
@@ -338,6 +346,57 @@ def poss():
 		if premier == nome:
 			elettori = elettori + 3
 		gioco()
+	elif poss == 41:
+		print "Corte Friulana: Bestemmia diritto fondamentale"
+		print "Chiesto al parlamento di abolire ogni legge contro la bestemmia"
+		gioco()
+	elif poss == 42:
+		print "Governo approva mozione del Consiglio Tecnico: Stanziati 10 milioni di Ambrogi contro il cancro"
+		if premier == sd:
+			ele1 = ele1 + 4
+		if premier == ss:
+			ele2  = ele2 + 4
+		if premier == nome:
+			elettori = elettori + 4
+		else:
+			ele1 = ele1 + 1
+			ele2 = ele2 + 1
+			elettori = elettori + 1
+		gioco()
+	elif poss == 43:
+		print "Retata a Cesano Boscone"
+		if turno%2 == 0:
+			print "Arrestato", ss
+			ss = nomi[random.randint(0,14)]+ " " + cognomi[random.randint(0,14)]
+			ele2 = ele2 - 10
+		elif turno%5 == 0:
+			print "Arrestato", si
+			si = nomi[random.randint(0,14)]+ " " + cognomi[random.randint(0,14)]
+			elettori = elettori - 10
+		else:
+			print "Arrestato", sd
+			sd = nomi[random.randint(0,14)]+ " " + cognomi[random.randint(0,14)]
+			ele1 = ele1 - 10
+		gioco()
+	elif poss == 44:
+		print "Olimpiadi: Saranno a Milano"
+		if premier == sd:
+			ele1 = ele1 + 4
+		if premier == ss:
+			ele2  = ele2 + 4
+		if premier == nome:
+			elettori = elettori + 4
+		else:
+			ele1 = ele1 + 1
+			ele2 = ele2 + 1
+			elettori = elettori + 1
+		gioco()
+	elif poss == 45:
+		print "Partito Indipendente e", destra, "alleate per qualche mese"
+		ele1 = ele1 + 5
+		elettori = elettori + 5
+		gioco()
+		
 	gioco()
 	
 def gioco():
@@ -355,6 +414,9 @@ def gioco():
 	global depa
 	global premier
 	global depd
+	global ss
+	global sd
+	global si
 	global sinistra
 	global destra
 	global parlamento
@@ -366,7 +428,7 @@ def gioco():
 		depd = ele1*parlamento/(elettori+ele1+ele2+eleap)
 		deps = ele2*parlamento/(elettori+ele1+ele2+eleap)
 		depa = eleap*parlamento/(elettori+ele1+ele2+eleap)
-		sindaci = elettori*250/(elettori+ele1+ele2+eleap)
+		sindaci = elettori*4000/(elettori+ele1+ele2+eleap)
 		if parlamento/deputati < 2 and flop < 2 and decas != 0:
 			print """Salve signor presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Capo. Governi bene in questi due anni!"""
 			print "Onori al Capo dello Stato", nome, "!"
@@ -412,7 +474,7 @@ def gioco():
 	print "Parlamentari", destra, ":" ,depd, "/", parlamento
 	print "Parlamentari", sinistra, ":",deps, "/", parlamento
 	print "Parlamentari misti:", depa, "/", parlamento
-	print "Sindaci", sindaci, "/250"
+	print "Sindaci", sindaci, "/4000"
 	print "Altri:"
 	print "Elettori", destra, ":", ele1
 	print "Elettori", sinistra, ":", ele2
@@ -436,7 +498,7 @@ def gioco():
 		eleap = eleap + random.randint(-1,1)
 
 	turno = turno +1
-	if sindaci > 240:
+	if sindaci > (4000*0.85):
 		print "Grazie Presidente, vogliamo mandarti in campo! Hai vinto, possediamo quasi tutti i comuni ora. Abbiamo eletto il Capo Dello Stato con maggioranza dei comuni e sei tu l'attuale Capo dello Stato. Governa bene! \n Onori al Capo dello Stato", nome, "!"
 		gioco()
 		
