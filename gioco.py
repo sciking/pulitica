@@ -21,6 +21,8 @@ dichiarazionipol = ["Creeremo il sistema presidenziale"]
 dichiarazionieco = ["Abbasseremo le tasse"]
 dichiarazionieti = ["Si all'aborto incondizionato","La vera vittoria non è introdurre il matrimonio gay, ma abolirlo per tutti!" ]
 dichiarazionialtro = ["Milano vincerà i mondiali del folball!"]
+gloc = elettori*18/(elettori+ele1+ele2+eleap)
+gloca = int(gloc*random.random())
 nomi = ["Mario","Alessio","Gaetano","Alessandro","Michele","Giorgio","Matteo","Silvio","Alberto","Gianni","Teresio","Piergastone","Diego","Giulio","Giuàn","Azeglio","Adolfo","Benito"]
 cognomi = ["Brambilla","Fumagalli","Rossi","Verdi","Pessotti","Bianchi","Bernasca","Salvino","Sensi","Olivetti","Vignana","Carminati","Colombo","Lombardi","Toccaferro","Perazzini","Mussolesi","Schavòn"]
 sd = nomi[random.randint(0,17)]+ " " + cognomi[random.randint(0,17)]
@@ -31,7 +33,7 @@ pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare", "Movimento delle L
 pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte", "Progressismo è Democrazia", "Rivoluzione Popolare", "MoviMento Quattro Soli", "Equità nelle ricchezze", "Alleanza di Sinistra"]
 destra = pa[random.randint(0,8)]
 sinistra =  pb[random.randint(0,8)]
-leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo","per diminuire l'età pensionabile","per ufficializzare la lingua piemontese","per collegare Milano a Varese via Navigli","per collegare via fiume Milano e Ivrea","per creare una rete sociale di stato","per migliorare le armi dei ghisa","per esportare la piadina romagnola nel mondo","per costruire una Reggia Presidenziale a Codigoro","contro il plagio", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per creare la Regione Autonoma Emiliana", "per l'istituzione delle regioni","contro il reato di furto con scasso","contro le mense sporche", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","contro la prostituzione minorile","per aprire un centro di integrazione per gli immigrati","per dare un premio di 500 Ambrogi ai collezionisti","contro le droghe pesanti","per promuovere la cura dalla ludopatia","contro i prof politicizzati","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per tutelare il risotto alla milanese","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","per insegnare la buona educazione ai bambini","contro il nomadismo","per le pari opportunità","per lo ius soli","per alzare il prezzo delle sigarette","per mettere nuove misure di sicurezza ai danè","per contrastare il razzismo","per introdurre la prigione per vandalismo","per aiutare i milanesi prima degli altri","per la limitazione delle armi bianche","per migliorare l'esercito di milizia","per aumentare l'autonomia federale alla Repubblica Friulana","contro le nudità all'Idroscalo","per introdurre","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","per la libera associazione della Sicilia a Milano","per il disarmamento dei ghisa","contro le droghe leggere","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
+leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo","per diminuire l'età pensionabile","per ufficializzare la lingua piemontese","per collegare Milano a Varese via Navigli","per collegare via fiume Milano e Ivrea","per creare una rete sociale di stato","per migliorare le armi dei ghisa","per esportare la piadina romagnola nel mondo","per costruire una Reggia Presidenziale a Codigoro","contro il plagio", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per creare la Regione Autonoma Emiliana", "per l'istituzione delle regioni","contro il reato di furto con scasso","contro le mense sporche", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","contro il veganismo","contro le infiltrazioni malavitose nelle amministrazioni locali","contro l'estremismo religioso","","","","","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","contro la prostituzione minorile","per aprire un centro di integrazione per gli immigrati","per dare un premio di 500 Ambrogi ai collezionisti","contro le droghe pesanti","per promuovere la cura dalla ludopatia","contro i prof politicizzati","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per tutelare il risotto alla milanese","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","per insegnare la buona educazione ai bambini","contro il nomadismo","per le pari opportunità","per lo ius soli","per alzare il prezzo delle sigarette","per mettere nuove misure di sicurezza ai danè","per contrastare il razzismo","per introdurre la prigione per vandalismo","per aiutare i milanesi prima degli altri","per la limitazione delle armi bianche","per migliorare l'esercito di milizia","per aumentare l'autonomia federale alla Repubblica Friulana","contro le nudità all'Idroscalo","per introdurre","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","per la libera associazione della Sicilia a Milano","per il disarmamento dei ghisa","contro le droghe leggere","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
 emergenza = tuple(leggi)
 parlamento = 220
 deputati = elettori*parlamento/(elettori+ele1+ele2+eleap)# elettori : totale = x : parlamento
@@ -137,14 +139,12 @@ def poss():
 		ele2 = ele2 + 2
 		gioco()
 	elif poss == 8:
-		print "Segretario PIM si masturba in piazza"
+		print "Deputato PIM si masturba in piazza"
 		print nome, "tenta di salvare in extremis: 'Nulla sia coperto, \n voteremo si alla richiesta di arresto"
 		elettori = elettori + random.randint(-4, 1)
 		gioco()
 	elif poss == 9:
-		print "Alleanza con un partito Svizzero. Sindaci felici ma elettori meno."
-		sindaci = sindaci + 2
-		elettori = elettori - 1
+		print "Fast Food: E' rivincita \n Roberto Vicentino: Fa bene, se moderato"
 		gioco()
 	elif poss == 10:
 		print "La prostituzione legale è legge, grazie a noi"
@@ -408,6 +408,8 @@ def gioco():
 	global eleap
 	global sindaci
 	global r
+	global gloc
+	global gloca
 	global emergenza
 	global nome
 	global flop
@@ -477,6 +479,7 @@ def gioco():
 	print "Parlamentari", sinistra, ":",deps, "/", parlamento
 	print "Parlamentari misti:", depa, "/", parlamento
 	print "Sindaci", sindaci, "/4000"
+	print "Gov.Locali:", gloca, "/18"
 	print "Altri:"
 	print "Elettori", destra, ":", ele1
 	print "Elettori", sinistra, ":", ele2
@@ -500,9 +503,6 @@ def gioco():
 		eleap = eleap + random.randint(-1,1)
 
 	turno = turno +1
-	if sindaci > (4000*0.85):
-		print "Grazie Presidente, vogliamo mandarti in campo! Hai vinto, possediamo quasi tutti i comuni ora. Abbiamo eletto il Capo Dello Stato con maggioranza dei comuni e sei tu l'attuale Capo dello Stato. Governa bene! \n Onori al Capo dello Stato", nome, "!"
-		gioco()
 		
 	if flop > 5 and turno > 25:
 		print "Hai sbagliato troppe volte, mi spiace. Sei licenziato \n"
@@ -522,6 +522,13 @@ def gioco():
 	if turno%25 == 0:
 		sd = nomi[random.randint(0,17)]+ " " + cognomi[random.randint(0,17)]
 		ss = nomi[random.randint(0,17)]+ " " + cognomi[random.randint(0,17)]
+	if turno%4:
+		gloc = elettori*18/(elettori+ele1+ele2+eleap)
+		coeff = random.random()
+		if coeff < 0.5:
+			gloca = int(gloc*coeff)
+		else:
+			gloca = int(gloc*0.5)
 		
 	os.system("clear")
 	poss()
