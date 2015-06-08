@@ -23,7 +23,7 @@ dichiarazionieti = ["Si all'aborto incondizionato","La vera vittoria non è intr
 dichiarazionialtro = ["Milano vincerà i mondiali del folball!"]
 gloc = elettori*18/(elettori+ele1+ele2+eleap)
 gloca = int(gloc*random.random())
-nomi = ["Mario","Alessio","Gaetano","Alessandro","Michele","Giorgio","Matteo","Silvio","Alberto","Gianni","Teresio","Ambrogio","Anselmo","Giovese","Bortolo","","Piergastone","Diego","Giulio","Giuàn","Azeglio","Adolfo","Benito","Natale","Nazareno",""]
+nomi = ["Mario","Alessio","Gaetano","Alessandro","Michele","Giorgio","Matteo","Silvio","Alberto","Gianni","Teresio","Ambrogio","Anselmo","Giovese","Bortolo","Augusto","Piergastone","Diego","Giulio","Giuàn","Azeglio","Adolfo","Benito","Natale","Nazareno","Jorji"]
 cognomi = ["Brambilla","Fumagalli","Rossi","Verdi","Pessotti","Bianchi","Bernasca","Salvino","Sensi","Bellotti","Conti","Invernizzi","Nicolello","Legramandi","Olivetti","Vignana","Carminati","Colombo","Lombardi","Basile","Degasperi","Culot","Toccaferro","Perazzini","Mussolesi","Schavòn"]
 sd = nomi[random.randint(0,25)]+ " " + cognomi[random.randint(0,25)]
 ss = nomi[random.randint(0,25)]+ " " + cognomi[random.randint(0,25)]
@@ -90,7 +90,7 @@ def poss():
 	random.shuffle(leggi) #dovrebbe mescolare ad mentulam canis la lista ma el va minga trop ben...
 	poss = random.randint(1,45)
 	if poss == 1:
-		print "Sindaco del Patrito liberale diserta nel Partito Indipendente"
+		print "Sindaco delle Liste Locali diserta nel Partito Indipendente"
 		sindaci = sindaci + 1
 		gioco()
 	elif poss == 2:
