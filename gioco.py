@@ -22,12 +22,12 @@ dichiarazionieco = ["Abbasseremo le tasse"]
 dichiarazionieti = ["Si all'aborto incondizionato","La vera vittoria non è introdurre il matrimonio gay, ma abolirlo per tutti!" ]
 dichiarazionialtro = ["Milano vincerà i mondiali del folball!"]
 gloca = 1
-nomi = ["Mario","Alessio","Gaetano","Alcide","Salvatore","Fermo","Beniamino","Antonello","Alessandro","Michele","Giorgio","Matteo","Attilio","Teodorico","Crescenzo","Arimanno","Floriano","Ambroeus","Francesco","Abbondio","Nunzio","Gerardo","Silvio","Alberto","Gianni","Teresio","Ambrogio","Anselmo","Giovese","Bortolo","Augusto","Piergastone","Diego","Giulio","Giuàn","Azeglio","Adolfo","Benito","Natale","Nazareno","Jorji"]
-cognomi = ["Brambilla","Fumagalli","Rossi","Verdi","Capellaro","da Pirla","Almirante","Casadei","Tettamanzi","Pessotti","Bianchi","Bernasca","Salvino","Porcu","Lefevre","Thompson","Vagneri","Wagner","Berlinguer","Tramaglino","Ienneri","Kowalsky","Popov","Sensi","Bellotti","Conti","Invernizzi","Nicolello","Legramandi","Olivetti","Vignana","Carminati","Colombo","Lombardi","Basile","Degasperi","Culot","Toccaferro","Perazzini","Mussolesi","Schavòn"]
-sd = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
-ss = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
-premier = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
-si = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
+nomi = ["Mario","Alessio","Gaetano","Alcide","Salvatore","Fermo","Giuliano","Domenico","Albano","Celere","Giulio Cesare","Beniamino","Antonello","Alessandro","Michele","Giorgio","Matteo","Attilio","Teodorico","Crescenzo","Arimanno","Floriano","Ambroeus","Francesco","Abbondio","Nunzio","Gerardo","Silvio","Alberto","Gianni","Teresio","Ambrogio","Anselmo","Giovese","Amintore","Italo","Arcibaldo","Justinià","Danjuro","Bortolo","Augusto","Piergastone","Diego","Giulio","Giuàn","Azeglio","Adolfo","Benito","Natale","Nazareno","Jorji"]
+cognomi = ["Brambilla","Fumagalli","Rossi","Verdi","Capellaro","da Pirla","Almirante","Casadei","Tettamanzi","Pessotti","Bianchi","Bernasca","Salvino","Porcu","Lefevre","Thompson","Vagneri","Wagner","Berlinguer","Tramaglino","Ienneri","Kowalsky","Romano","Sala","Altissimo","Maroni","Olsone","Popov","Sensi","Bellotti","Conti","Invernizzi","Nicolello","Legramandi","Olivetti","Vignana","Carminati","Zennaro","Savoia","Figliodigesù","De Gian Fiö","Ferrero","Colombo","Lombardi","Basile","Degasperi","Culot","Toccaferro","Perazzini","Mussolesi","Schavòn"]
+sd = nomi[random.randint(0,50)]+ " " + cognomi[random.randint(0,50)]
+ss = nomi[random.randint(0,50)]+ " " + cognomi[random.randint(0,50)]
+premier = nomi[random.randint(0,50)]+ " " + cognomi[random.randint(0,50)]
+si = nomi[random.randint(0,50)]+ " " + cognomi[random.randint(0,50)]
 pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare","Partito Sociale Liberale","Movimento Federale del Lavoro", "Movimento delle Libertà", "Casa Riformista", "Il Lume della Ragione","Patrito contro le Pantofole con Michele Redeisci", "Casa delle Riforme", "Föra di ball! Milano Libera"]
 pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte","Alleanza di Democrazia","Sinistra Triveneta", "Progressismo è Democrazia", "Rivoluzione Popolare", "MoviMento Quattro Soli", "Equità nelle ricchezze", "Alleanza di Sinistra"]
 destra = pa[random.randint(0,10)]
@@ -369,15 +369,15 @@ def poss():
 		print "Retata a Cesano Boscone"
 		if turno%2 == 0:
 			print "Arrestato", ss
-			ss = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
+			ss = nomi[random.randint(0,50)]+ " " + cognomi[random.randint(0,50)]
 			ele2 = ele2 - 10
 		elif turno%5 == 0:
 			print "Arrestato", si
-			si = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
+			si = nomi[random.randint(0,50)]+ " " + cognomi[random.randint(0,50)]
 			elettori = elettori - 10
 		else:
 			print "Arrestato", sd
-			sd = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
+			sd = nomi[random.randint(0,50)]+ " " + cognomi[random.randint(0,50)]
 			ele1 = ele1 - 10
 		gioco()
 	elif poss == 44:
@@ -520,7 +520,7 @@ def gioco():
 			premier = sd
 		else:
 			print "Nessun eletto: Capo dello Stato nomina governo tecnico"
-			premier = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
+			premier = nomi[random.randint(0,50)]+ " " + cognomi[random.randint(0,50)]
 		
 	print "Turno", turno
 	print "Capo del Governo:", premier
@@ -571,9 +571,9 @@ def gioco():
 	if eleap < 0:
 		eleap = 0
 	if turno%25 == 0:
-		sd = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
-		ss = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
-		si = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
+		sd = nomi[random.randint(0,50)]+ " " + cognomi[random.randint(0,50)]
+		ss = nomi[random.randint(0,50)]+ " " + cognomi[random.randint(0,50)]
+		si = nomi[random.randint(0,50)]+ " " + cognomi[random.randint(0,50)]
 	if turno%4 == 0:
 		gloc = elettori*18/(elettori+ele1+ele2+eleap)
 		coeffi = [0.5,0.75,1,1.25]
