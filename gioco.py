@@ -28,10 +28,10 @@ sd = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
 ss = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
 premier = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
 si = nomi[random.randint(0,40)]+ " " + cognomi[random.randint(0,40)]
-pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare", "Movimento delle Libertà", "Casa Riformista", "Il Lume della Ragione","Patrito contro le Pantofole con Michele Redeisci", "Casa delle Riforme", "Föra di ball! Milano Libera"]
-pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte", "Progressismo è Democrazia", "Rivoluzione Popolare", "MoviMento Quattro Soli", "Equità nelle ricchezze", "Alleanza di Sinistra"]
-destra = pa[random.randint(0,8)]
-sinistra =  pb[random.randint(0,8)]
+pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare","Partito Sociale Liberale","Movimento Federale del Lavoro", "Movimento delle Libertà", "Casa Riformista", "Il Lume della Ragione","Patrito contro le Pantofole con Michele Redeisci", "Casa delle Riforme", "Föra di ball! Milano Libera"]
+pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte","Alleanza di Democrazia","Sinistra Triveneta", "Progressismo è Democrazia", "Rivoluzione Popolare", "MoviMento Quattro Soli", "Equità nelle ricchezze", "Alleanza di Sinistra"]
+destra = pa[random.randint(0,10)]
+sinistra =  pb[random.randint(0,10)]
 leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo","per diminuire l'età pensionabile","per ufficializzare la lingua piemontese","per collegare Milano a Varese via Navigli","per collegare via fiume Milano e Ivrea","per creare una rete sociale di stato","per migliorare le armi dei ghisa","per esportare la piadina romagnola nel mondo","per costruire una Reggia Presidenziale a Codigoro","contro il plagio", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per creare la Regione Autonoma Emiliana", "per l'istituzione delle regioni","contro il reato di furto con scasso","contro le mense sporche", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","contro il veganismo","contro le infiltrazioni malavitose nelle amministrazioni locali","contro l'estremismo religioso","contro il complottismo","per abbassare le tasse indirette","per migliorare gli ospedali","per abolire i giornali erotici","per la prevenzione dell'obesità","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","contro la prostituzione minorile","per aprire un centro di integrazione per gli immigrati","per dare un premio di 500 Ambrogi ai collezionisti","contro le droghe pesanti","per promuovere la cura dalla ludopatia","contro i prof politicizzati","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per tutelare il risotto alla milanese","per aumentare le ore di educazione sessuale","per punire la bestemia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","per insegnare la buona educazione ai bambini","contro il nomadismo","per le pari opportunità","per lo ius soli","per alzare il prezzo delle sigarette","per mettere nuove misure di sicurezza ai danè","per contrastare il razzismo","per introdurre la prigione per vandalismo","per aiutare i milanesi prima degli altri","per la limitazione delle armi bianche","per migliorare l'esercito di milizia","per aumentare l'autonomia federale alla Repubblica Friulana","contro le nudità all'Idroscalo","per introdurre la lingua veneta nelle scuole","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","per la libera associazione della Sicilia a Milano","per il disarmamento dei ghisa","contro le droghe leggere","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
 emergenza = tuple(leggi)
 parlamento = 220
@@ -525,10 +525,10 @@ def gioco():
 		elettori = 10
 		flop = flop + 1
 	if ele1 < 5:
-		destra = pa[random.randint(0,5)]
+		destra = pa[random.randint(0,10)]
 		ele1 = 15
 	if ele2 < 5:
-		sinistra =  pb[random.randint(0,5)]
+		sinistra =  pb[random.randint(0,10)]
 		ele2 = 15
 	if eleap < 0:
 		eleap = 0
@@ -541,7 +541,12 @@ def gioco():
 		coeffi = [0.5,0.75,1,1.25]
 		coeff = coeffi[random.randint(0,3)]
 		gloca = int(gloc*coeff)
+	if turno%10 == 0 and livello > 9:
+		referendum()
 		
 	os.system("clear")
 	poss()
 gioco()		# computerblog.ga no alle pantofole :D
+def rederendum():
+	print "PLEBISCITO - STRUMENTO DI DEMOCRAZIA DIRETTA"
+	quesiti = ["Abolizione della detenzione preventiva","per l'adozione indifferenziata a coppie omo ed eterosessuali","contro l'insegnamento della  matematica","per l'illegalità delle pantofole","per inserire l'obbligo vaccinale totale","per espellere gli immigrati clandestini","per migliorare gli accordi con la Polonia","per chiedere una licenza ai prestiné","per migliorare i cessi pubblici","per comperare nuove corriere Neopleb","per abolire il monopolio telefonico della SET","per finanziare la squadra del folball","contro l'inquinamento ambientale","per abolire le norme antibestemmia","contro la malavita","per legalizzare l'uso alimentare del gatto","per abolire il software proprietario","contro il fumo di sigaretta","per il nucleare nella Repubblica Milanese","","","","","","","","","","",""]
