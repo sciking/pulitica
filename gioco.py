@@ -400,7 +400,45 @@ def poss():
 		gioco()
 		
 	gioco()
-	
+def referendum():
+	os.system("clear")
+	global elettori
+	global ele1
+	global ele2
+	print "PLEBISCITO - STRUMENTO DI DEMOCRAZIA DIRETTA"
+	quesiti = ["per l'abolizione della detenzione preventiva","per l'adozione indifferenziata a coppie omo ed eterosessuali","contro l'insegnamento della  matematica","per l'illegalità delle pantofole","per inserire l'obbligo vaccinale totale","per espellere gli immigrati clandestini","per migliorare gli accordi con la Polonia","per chiedere una licenza ai prestiné","per migliorare i cessi pubblici","per comperare nuove corriere Neopleb","per abolire il monopolio telefonico della SET","per finanziare la squadra del folball","contro l'inquinamento ambientale","per abolire le norme antibestemmia","contro la malavita","per legalizzare l'uso alimentare del gatto","per abolire il software proprietario","contro il fumo di sigaretta","per il nucleare nella Repubblica Milanese","contro le religioni","per l'abolizione dei licei","per abolire gli inni comunali","per abolire i numeri 668 a pagamento","per diminuire il costo di iscrizione alle poste","contro le droghe","per aumentare le libertà personali","per introdurre la prevenzione delle malattie sessuali a spese dello stato","contro il gioco d'azzardo","per istituire una Regione del Canavese","per tutelare le gondole a Cmâc"]
+	random.shuffle(quesiti)
+	print "Quesito", quesiti[1]
+	sceltak = ["si","no"]
+	sceltaq = raw_input("Si o No?")
+	sceltav = sceltak[random.randint(0,1)]
+	sceltad = sceltak[random.randint(0,1)]
+	sceltas = sceltak[random.randint(0,1)]
+	sceltaq = sceltaq.lower()
+	print "Scelta PIM:", sceltaq
+	print "Scelta", destra, ":", sceltad
+	print "Scelta", sinistra, ":", sceltas
+	if sceltav == "si":
+		if sceltaq == "si":
+			elettori = elettori + 3
+		if sceltad == "si":
+			ele1 = ele1 + 3
+		if sceltas == "si":
+			ele2 = ele2 + 3
+	else:
+		if sceltaq != "si":
+			elettori = elettori + 3
+		if sceltad != "si":
+			ele1= ele1 + 3
+		if sceltas != "si":
+			ele = ele2 + 3
+	del quesiti[1]
+	print "Il popolo ha scelto", sceltav
+	raw_input("Premi Invio per continuare")
+	os.system("clear")
+	poss()
+		
+
 def gioco():
 	global turno
 	global elettori
@@ -541,12 +579,9 @@ def gioco():
 		coeffi = [0.5,0.75,1,1.25]
 		coeff = coeffi[random.randint(0,3)]
 		gloca = int(gloc*coeff)
-	if turno%10 == 0 and livello > 9:
+	if turno%10 == 0 and turno > 9:
 		referendum()
 		
 	os.system("clear")
 	poss()
 gioco()		# computerblog.ga no alle pantofole :D
-def rederendum():
-	print "PLEBISCITO - STRUMENTO DI DEMOCRAZIA DIRETTA"
-	quesiti = ["Abolizione della detenzione preventiva","per l'adozione indifferenziata a coppie omo ed eterosessuali","contro l'insegnamento della  matematica","per l'illegalità delle pantofole","per inserire l'obbligo vaccinale totale","per espellere gli immigrati clandestini","per migliorare gli accordi con la Polonia","per chiedere una licenza ai prestiné","per migliorare i cessi pubblici","per comperare nuove corriere Neopleb","per abolire il monopolio telefonico della SET","per finanziare la squadra del folball","contro l'inquinamento ambientale","per abolire le norme antibestemmia","contro la malavita","per legalizzare l'uso alimentare del gatto","per abolire il software proprietario","contro il fumo di sigaretta","per il nucleare nella Repubblica Milanese","","","","","","","","","","",""]
