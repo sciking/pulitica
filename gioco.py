@@ -472,15 +472,15 @@ def gioco():
 		elif parlamento/(deps+depa) <2:
 			print "L'Indipendente di Milano \n Sinistra al Governo, ma coalizzata"
 			premier = ss
-		elif parlamento/(depd+depa) <2:
-			print "L'Indipendente di Milano \n Destra al Governo, ma coalizzata"
-			premier = sd
 		elif parlamento/(deputati+depa) <2:
 			print "L'Indipendente di Milano \n Siamo al Governo, ma coalizzati"
 			if caput == 0:
 				premier = nome
 			else:
 				premier = si
+		elif parlamento/(depd+depa) <2:
+			print "L'Indipendente di Milano \n Destra al Governo, ma coalizzata"
+			premier = sd
 		else:
 			print "Nessun eletto: Capo dello Stato nomina governo tecnico"
 			premier = nomi[random.randint(0,30)]+ " " + cognomi[random.randint(0,30)]
@@ -537,13 +537,11 @@ def gioco():
 		sd = nomi[random.randint(0,30)]+ " " + cognomi[random.randint(0,30)]
 		ss = nomi[random.randint(0,30)]+ " " + cognomi[random.randint(0,30)]
 		si = nomi[random.randint(0,30)]+ " " + cognomi[random.randint(0,30)]
-	if turno%4:
+	if turno%4 == 0:
 		gloc = elettori*18/(elettori+ele1+ele2+eleap)
-		coeff = random.random()
-		if coeff < 0.5:
-			gloca = int(gloc*coeff)
-		else:
-			gloca = int(gloc*0.5)
+		coeffi = [0.5,0.75,1,1.25]
+		coeff = coeffi[random.randint(0,3)]
+		gloca = int(gloc*coeff)
 		
 	os.system("clear")
 	poss()
