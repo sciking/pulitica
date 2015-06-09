@@ -473,7 +473,7 @@ def gioco():
 			print "L'Indipendente di Milano \n Sinistra al Governo, ma coalizzata"
 			premier = ss
 		elif parlamento/(depd+depa) <2:
-			print "L'Indipendente di Milano \n Desgfa al Governo, ma coalizzata"
+			print "L'Indipendente di Milano \n Destra al Governo, ma coalizzata"
 			premier = sd
 		elif parlamento/(deputati+depa) <2:
 			print "L'Indipendente di Milano \n Siamo al Governo, ma coalizzati"
