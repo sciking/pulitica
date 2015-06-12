@@ -94,7 +94,7 @@ def poss():
 	print "L'Indipendente di Milano"
 	#global deputati
 	random.shuffle(leggi) #dovrebbe mescolare ad mentulam canis la lista ma el va minga trop ben...
-	poss = random.randint(1,50)
+	poss = random.randint(1,55)
 	if poss == 1:
 		print "Sindaco delle Liste Locali diserta nel Partito Indipendente"
 		sindaci = sindaci + 1
@@ -131,6 +131,7 @@ def poss():
 		elettori = elettori + 3
 		ele1 = ele1 + 3
 		ele2 = ele2 - 3
+		eleap = eleap + random.randint(-3,3)
 		gioco()
 	elif poss == 6:
 		print "Arrestato un nostro sindaco!"
@@ -146,12 +147,15 @@ def poss():
 		sindaci = sindaci + 1
 		ele1 = ele1 - 2
 		ele2 = ele2 + 2
+		eleap = eleap + random.randint(-1,1)
 		soldi = soldi - 500000
 		gioco()
 	elif poss == 8:
 		print "Deputato PIM si masturba in piazza"
 		print nome, "tenta di salvare in extremis: 'Nulla sia coperto, \n voteremo si alla richiesta di arresto"
 		elettori = elettori + random.randint(-4, 1)
+		ele1 = ele1 + 1
+		ele2 = ele2 + 1
 		gioco()
 	elif poss == 9:
 		print "Fast Food: E' rivincita \n Roberto Vicentino: Fa bene, se moderato"
@@ -160,6 +164,9 @@ def poss():
 		print "La prostituzione legale è legge, grazie a noi"
 		sindaci = sindaci - 1
 		elettori = elettori + 6 #prima era 8... suvvia, non siamo così puttanieri :D
+		ele1 = ele1 + random.randint(-2,2)
+		ele2 = ele2 + random.randint(-2,2)
+		eleap = eleap + random.randint(-2,2)
 		soldi = soldi + 300000
 		gioco()
 	elif poss == 11:
@@ -199,6 +206,9 @@ def poss():
 		print "Guardia Liberale entra nel PIM"
 		print "L'organizzazione non è ben vista a Milano, ma ha molti votanti"
 		elettori = elettori + random.randint(-2,3)
+		ele1 = ele1 + random.randint(-2,3)
+		ele2 = ele2 + random.randint(-2,3)
+		eleap = eleap + random.randint(-2,3)
 		gioco()
 	elif poss == 18:
 		print "Rivolte: I Ghisa antisommossa gestiscono benissimo la situazione"
@@ -466,8 +476,67 @@ def poss():
 		elettori = elettori + 5
 		eleap = eleap + 2
 		gioco()
-			
-		
+	elif poss == 51:
+		if turno %4 == 0:
+			kade = random.randint(1,4)
+			if kade == 1:
+				print "Liste minori entrano nel PIM"
+				elettori = elettori + eleap
+				eleap = 0
+			elif kade == 2:
+				print "Liste minori entrano nel", destra
+				ele1 = ele1 + eleap
+				eleap = 0	
+			elif kade == 3:
+				print "Liste minori entrano nel", sinistra
+				ele2 = ele2 + eleap
+				eleap = 0
+			elif kade == 4:
+				print "Milano,", random.randint(1,5),"in Europa per le scuole!"
+			else:
+				print "Crisi: Effetti diminuiti in pochi mesi"
+		else:
+			print "Milano: Motore economico dell'Italia"
+		gioco()
+	elif poss == 52:
+		print "Olimpiadi: L'Italia Unita vince il medagliere"
+		gioco()
+	elif poss == 53:
+		print "Politici milanesi in testa all'Unità Europea"
+		ele1 = ele1 + 4
+		ele2 = ele2 + 4
+		eleap = eleap + 2
+		elettori = elettori + 4
+		gioco()
+	elif poss == 54:
+		if turno%2 == 0:
+			print "Scandalo a Milano"
+			print "Grande azienda paga mazzette per leggi favorevoli, coinvolti tutti i partiti"
+			print "Arrestato", nomi[random.randint(0,85)]+ " " + cognomi[random.randint(0,85)] ,", presidente della società"
+			ele1 = ele1 - 20
+			ele2 = ele2 - 20
+			eleap = eleap - 10
+			elettori = elettori - 20
+		else:
+			print "Partiti sempre più amici, gli elettori aumentano"
+			ele1 = ele1 + 3
+			ele2 = ele2 + 3
+			eleap = eleap + 1
+			elettori = elettori + 3		
+		gioco()
+	elif poss == 55:
+		print "L'energia di Milano è sempre più verde"
+		if premier == ss:
+			ele2 = ele2 + 5
+		if premier == sd:
+			ele1 = ele1 + 5
+		if premier == nome or premier == si:
+			elettori = elettori + 5
+		elettori = elettori + 2
+		ele1 = ele1 + 2
+		ele2 = ele2 + 2
+		eleap = eleap + 1
+		gioco()
 	gioco()
 def referendum():
 	os.system("clear")
