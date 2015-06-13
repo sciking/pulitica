@@ -578,25 +578,38 @@ def poss():
 			print "Scie idriche: Milano vince causa contro sostenitori"
 			soldi = soldi + 100000
 		elif luma == 2:
-			print "Friuli ricchissimo: Una parte va a Milano
+			print "Friuli ricchissimo: Una parte va a Milano"
 			soldi = soldi + 250000
 		elif luma == 3:
 			print "Politici milanesi: I più produttivi. E lo stato vince premio"
 			soldi = soldi + 25000
 		elif luma == 4:
-			print "Rovigo: Nuove zone industriali \nGuadagno alla lunga, ma per ora sol soldi"
-			soldi = soldi - 100000
+			print "Nuove zone industriali vicino Ferrara fruttano"
+			soldi = soldi + 250000
 		elif luma == 5 and random.randint(1,10) > 8:
-			print "Energie Pulite: Multati per 1 milione"
-			soldi = soldi - 1000000
+			print "Farmaceutica multata: Iniettava acqua in cambio di denaro"
+			soldi = soldi + 1500000
 			gioco()
 		elif luma == 5:
-			print "Milano restituisce titoli di stato: Non vi è guadagno"
-			soldi = soldi - 10000
+			print "Investimenti azzeccati e Milano vince mezzo milione"
+			soldi = soldi + 500000
 		elif luma == 6:
-			print "Esposizione universale: Persi 100000Å"
-			soldi = soldi - 100000
+			print "Esposizione universale: Ci sono guadagni"
+			soldi = soldi + 25000
 		gioco()			
+	elif poss == 59:
+		print "Milano vince il premio 'Città mondiale dell'Anno'"
+		elettori = elettori + 1
+		ele1 = ele1 + 1
+		ele2 = ele2 + 1
+		gioco()
+	elif poss == 60:
+		print "I quartieri degradati a Milano sono troppo, per l'elettorato"
+		elettori = elettori - 2
+		ele1 = ele1 - 2
+		ele2 = ele2 - 2
+		eleap = eleap - 1
+		gioco()
 			
 	gioco()
 def referendum():
