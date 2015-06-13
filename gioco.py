@@ -11,6 +11,7 @@ elettori = 15
 mandatop = 0
 flop = 0
 soldi = 100000000
+possib = [-100000, - 75000, -50000, 0, 50000, 100000, 250000, 500000, 750000, 1000000] #9 elementi 0-9
 r = 1
 sindaci = 300
 difficile = "abc" 
@@ -30,11 +31,11 @@ sd = nomi[random.randint(0,85)]+ " " + cognomi[random.randint(0,85)]
 ss = nomi[random.randint(0,85)]+ " " + cognomi[random.randint(0,85)]
 premier = nomi[random.randint(0,85)]+ " " + cognomi[random.randint(0,85)]
 si = nomi[random.randint(0,85)]+ " " + cognomi[random.randint(0,85)]
-pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare","Partito Sociale Liberale","Movimento Federale del Lavoro", "Movimento delle Libertà", "Casa Riformista", "Il Lume della Ragione","Patrito contro le Pantofole con Michele Redeisci", "Casa delle Riforme", "Föra di ball! Milano Libera"]
-pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte","Alleanza di Democrazia","Sinistra Triveneta", "Progressismo è Democrazia", "Rivoluzione Popolare", "MoviMento Quattro Soli", "Equità nelle ricchezze", "Alleanza di Sinistra"]
+pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare","Partito Sociale Liberale","Movimento Federale del Lavoro", "Movimento delle Libertà", "Casa Riformista", "Il Lume della Ragione","Patrito contro le Pantofole con Michele Redeisci", "Casa delle Riforme", "Föra di ball! Milano Libera","Destra Piemontese","Destra Arcobaleno","Movimento Fascio Repubblicano","Partito Socialista Federale","Milano Bene di Tutti",]
+pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte","Alleanza di Democrazia","Sinistra Triveneta", "Progressismo è Democrazia", "Rivoluzione Popolare", "MoviMento Quattro Soli", "Equità nelle ricchezze", "Alleanza di Sinistra","Lega Popolare Slava","Microfono Civico","Monarchia & Popolo","Lotta Milano","Democrazia Cattolica Socialista",]
 apar = ["Unione dei Radicali", "Giustizia di Destra", "Libertà Comunista", "Movimento Letterario","Partito della Scienza"]
-destra = pa[random.randint(0,10)]
-sinistra =  pb[random.randint(0,10)]
+destra = pa[random.randint(0,15)]
+sinistra =  pb[random.randint(0,15)]
 leggi = ["contro l'omofobia", "per l'introduzione del lombardo nelle scuole", "contro la ciarlataneria", "per la democrazia diretta", "contro l'obbligo militare", "per l'allungamento dell'obbligo scolastico","per creare un testo all'Inno Nazionale","per proibire la Lingua Inglese","per la beatificazione di Freddie Mercury","per aumentare le pensioni","per abolire la canapa a Milano", "contro le pantofole", "per la sicurezza scolastica", "per l'abolizione del reato di stupro","per l'insegnamento del russo","per diminuire l'età pensionabile","per ufficializzare la lingua piemontese","per collegare Milano a Varese via Navigli","per collegare via fiume Milano e Ivrea","per aumentare le pene ai pedofili","per eliminare ogni limitazione alla Sperimentazione animale","contro il populismo","contro il bigottismo","per creare nuove lupanari","per migliorare l'omologazione delle auto","contro la Boemia","per introdurre le sputacchiere","contro le epidemie","per limitare i fenomeni migratori","per creare una rete sociale di stato","per migliorare le armi dei ghisa","per esportare la piadina romagnola nel mondo","per costruire una Reggia Presidenziale a Codigoro","contro il plagio", "per l'illegalità del popolarismo", "per i diritti civili","per abolire le religioni", "per creare la Regione Autonoma Emiliana", "per l'istituzione delle regioni","contro il reato di furto con scasso","contro le mense sporche", "per abolire i videogiochi violenti","per l'elezione diretta del Premier","contro il veganismo","contro le infiltrazioni malavitose nelle amministrazioni locali","contro l'estremismo religioso","contro il complottismo","per abbassare le tasse indirette","per migliorare gli ospedali","per abolire i giornali erotici","per la prevenzione dell'obesità","contro chi indossa pantaloncini osceni con gli stivali","per migliorare i canili","contro il gioco del lotto","","","per l'introduzione del matrimionio incestuoso","per l'ufficializzazione della lingua lombarda","contro la prostituzione minorile","per introdurre le mescite a Milano","per evitare la diffusione dei pidocchi","per la liberalizzazione delle droghe leggere","per favorire l'onanimso nei giovini ambrosiani","contro le armi da fuoco","per introdurre la tessera sanitaria elettronica","per abbassare la maggiore età a 16 anni","per abolire il canone televisivo","contro le cure ciarlatane","per abolire il Senato Sovracomunale","per aprire un centro di integrazione per gli immigrati","per dare un premio di 500 Ambrogi ai collezionisti","contro le droghe pesanti","per promuovere la cura dalla ludopatia","contro i prof politicizzati","per ridurre l'inquinamento","per favorire le lobby del tabacco","per costruire una statua della Perottina a Pregnana","per tutelare il risotto alla milanese","per aumentare le ore di educazione sessuale","per punire la bestemia","per aumentare il tasso di natalità","contro i negozi taiwanesi","per mettere Sant'Ambrogio sui 10 Ambrogi","per fare una statua a Sant'Anselmo da Baggio","per il laicismo","contro i nomi stranieri","per creare un sistema operativo di stato","per tassare il parquet dei 25%","per evitare le malattie trasmesse dai migranti","contro l'inimicizia tra Bergamo e Brescia","per abolire le scarpe col tacco","per diminuire le tasse","per aumentare le pene per omicidio stradale","per insegnare la buona educazione ai bambini","contro il nomadismo","per le pari opportunità","per lo ius soli","per alzare il prezzo delle sigarette","per mettere nuove misure di sicurezza ai danè","per contrastare il razzismo","per introdurre la prigione per vandalismo","per aiutare i milanesi prima degli altri","per la limitazione delle armi bianche","per migliorare l'esercito di milizia","per aumentare l'autonomia federale alla Repubblica Friulana","contro le nudità all'Idroscalo","per introdurre la lingua veneta nelle scuole","contro le droghe","contro il software proprietario","contro la pirateria informatica","per le adozioni ai single e ai gay","per la libera associazione della Sicilia a Milano","per il disarmamento dei ghisa","contro le droghe leggere","Per regolare l'immigrazione dall'Est Europa","Per l'introduzione dei Permessi d'Accesso","per introdurre le console da videogioco a scuola","contro il gimnopodismo","per l'eliminazione delle zanzare","per fornire ai cittadini buoni gratis per il postribolo.","per proibire l'alcole","per aumentare i finanziamenti alle scuole","per abolire le scuole private", "contro le sculacciate",]
 emergenza = tuple(leggi)
 parlamento = 220
@@ -127,7 +128,7 @@ def poss():
 			print "Non vi sarà guerra con", altripaesi[random.randint(0,3)], "però"
 		else:
 			print "Sarà guerra con", altripaesi[random.randint(0,3)]
-			soldi = soldi - 1000000
+			soldi = soldi - 100000
 		elettori = elettori + 3
 		ele1 = ele1 + 3
 		ele2 = ele2 - 3
@@ -167,7 +168,7 @@ def poss():
 		ele1 = ele1 + random.randint(-2,2)
 		ele2 = ele2 + random.randint(-2,2)
 		eleap = eleap + random.randint(-2,2)
-		soldi = soldi + 300000
+		soldi = soldi + 100000
 		gioco()
 	elif poss == 11:
 		print "I giudici riescono a condannare l'imputato della strage di 3 anni fa: Ergastolo!"
@@ -273,9 +274,12 @@ def poss():
 		if sinistra == "MoviMento Quattro Soli":
 			print "Noi e le destre lo abbiamo detto, ma", sinistra, "grida al complotto"
 			elettori = elettori + 1
+			ele1 = ele1 + 1
+			ele2 = ele2 - 1
 		elif destra == "Unione Popolare":
 			print "Sinistra e PIM unanimi, ma l'UP ha dubbi ambientali"
 			ele2 = ele2 + 2
+			elettori = elettori + 1
 		else:
 			print "Partiti concordano unanimi"
 		gioco()
@@ -288,12 +292,12 @@ def poss():
 		gioco()
 	elif poss == 29:
 		print "Giornata nera del PIM: Corruzione, adulterazioni e contrabbando"
-		print nome,"multato per 3000 Ambrogi, il segretario condannato a 6 mesi"
+		print nome,"multato per 5000 Ambrogi, il segretario condannato a 6 mesi"
 		elettori = elettori - 6
 		ele1 = ele1 + 2
 		ele2 = ele2 + 3
 		eleap = eleap + 1
-		soldi = soldi + 3000
+		soldi = soldi + 5000
 		gioco()
 	elif poss == 30:
 		print "Fiera del Cosplay a Milano: Partecipa divertito l'Ambasciatore dell'Impero del Giappone"
@@ -317,7 +321,7 @@ def poss():
 		ele1 = ele1 + 3
 		ele2 = ele2 + 3
 		eleap = eleap + 1
-		soldi = soldi - 45000
+		soldi = soldi - 5000
 		elettori = elettori + 3
 		gioco()
 	elif poss == 34:
@@ -542,7 +546,58 @@ def poss():
 		ele1 = ele1 - 3
 		ele2 = ele2 - 3
 		eleap = eleap - 1
-		elettori = elettori - 3			
+		elettori = elettori - 3	
+	elif poss == 57: #qua si perdono i danè :D
+		lum = random.randint(1,6)
+		if lum == 1:
+			print "Scandalo Malasanità: Milano risarcirà due milioni"
+			soldi = soldi - 2000000
+		elif lum == 2:
+			print "Milano: Scuole costose. Tagli annunciati ma spese alte"
+			soldi = soldi - 500000
+		elif lum == 3:
+			print "Stato perde causa: Pagherà 25000Å"
+			soldi = soldi - 25000
+		elif lum == 4:
+			print "Rovigo: Nuove zone industriali \nGuadagno alla lunga, ma per ora sol soldi"
+			soldi = soldi - 100000
+		elif lum == 5 and random.randint(1,10) > 8:
+			print "Energie Pulite: Multati per 1 milione"
+			soldi = soldi - 1000000
+			gioco()
+		elif lum == 5:
+			print "Milano restituisce titoli di stato: Non vi è guadagno"
+			soldi = soldi - 10000
+		elif lum == 6:
+			print "Esposizione universale: Persi 100000Å"
+			soldi = soldi - 100000
+		gioco()
+	elif poss == 58: #qui si guadagnano i danè invece :D
+		luma = random.randint(1,6)
+		if luma == 1:
+			print "Scie idriche: Milano vince causa contro sostenitori"
+			soldi = soldi + 100000
+		elif luma == 2:
+			print "Friuli ricchissimo: Una parte va a Milano
+			soldi = soldi + 250000
+		elif luma == 3:
+			print "Politici milanesi: I più produttivi. E lo stato vince premio"
+			soldi = soldi + 25000
+		elif luma == 4:
+			print "Rovigo: Nuove zone industriali \nGuadagno alla lunga, ma per ora sol soldi"
+			soldi = soldi - 100000
+		elif luma == 5 and random.randint(1,10) > 8:
+			print "Energie Pulite: Multati per 1 milione"
+			soldi = soldi - 1000000
+			gioco()
+		elif luma == 5:
+			print "Milano restituisce titoli di stato: Non vi è guadagno"
+			soldi = soldi - 10000
+		elif luma == 6:
+			print "Esposizione universale: Persi 100000Å"
+			soldi = soldi - 100000
+		gioco()			
+			
 	gioco()
 def referendum():
 	os.system("clear")
@@ -673,10 +728,10 @@ def gioco():
 		else:
 			print "Nessun eletto: Capo dello Stato nomina governo tecnico"
 			premier = nomi[random.randint(0,85)]+ " " + cognomi[random.randint(0,85)]
-	entrate = random.randint(-1000,1500000)
-	uscite = random.randint(-500,85000)
+	entrate = possib[random.randint(0,9)]
+	uscite = possib[random.randint(0,9)]
 	if turno%2 == 0:
-		uscite = uscite + (220*4000)
+		uscite = uscite + 750000
 	bilancio = entrate - uscite
 	soldi = soldi + bilancio
 	print "Hai", soldi, "Å \t Bilancio", bilancio
@@ -721,10 +776,10 @@ def gioco():
 		elettori = 10
 		flop = flop + 1
 	if ele1 < 5:
-		destra = pa[random.randint(0,10)]
+		destra = pa[random.randint(0,15)]
 		ele1 = 15
 	if ele2 < 5:
-		sinistra =  pb[random.randint(0,10)]
+		sinistra =  pb[random.randint(0,15)]
 		ele2 = 15
 	if eleap < 0:
 		eleap = 0
