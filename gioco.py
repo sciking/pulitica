@@ -25,12 +25,12 @@ dichiarazionieco = ["Abbasseremo le tasse"]
 dichiarazionieti = ["Si all'aborto incondizionato","La vera vittoria non è introdurre il matrimonio gay, ma abolirlo per tutti!" ]
 dichiarazionialtro = ["Milano vincerà i mondiali del folball!"]
 gloca = 1
-nomi = ["Mario","Alessio","Patrick","Lumbardo","Linus","Bartolo","Ariel","Gaetano","Alcide","Salvatore","Fermo","Giuliano","Domenico","Albano","Celere","Giulio Cesare","Beniamino","Zebo","Bambin","Nazario","Paoletto","Glorioso","Gilberto","Helmut","Lotario","Arnaldo","Mauro Lupo","Teodorico","Adamo","Karol","Manfredi","Rotario","Antonello","Alessandro","Michele","Amado","Nikolai","Egidio","Tracaro","Arcangelo","Duomo","Attanasio","Garrumo","Giandomenico","Ciociaro","Giorgio","Licio","Calogero","Mona","Germano","Ugo","Matteo","Attilio","Teodorico","Crescenzo","Arimanno","Floriano","Baldassarre","Berto","Roso","Catalino","Tromlino","Ambroeus","Francesco","Abbondio","Nunzio","Gerardo","Silvio","Alberto","Gianni","Teresio","Ambrogio","Anselmo","Giovese","Amintore","Italo","Arcibaldo","Justinià","Danjuro","Bortolo","Augusto","Piergastone","Diego","Giulio","Giuàn","Azeglio","Adolfo","Benito","Natale","Nazareno","Jorji"]
-cognomi = ["Brambilla","Fumagalli","Rossi","dell'Incoronata","Schulzi","Fabero","Kofler","Coffiere","Verdi","Capellaro","da Pirla","Almirante","Casadei","Tettamanzi","Pessotti","Mastranzo","Nasdrovie","Dalle Colonie","Bono","Bevitacchini","Bianchi","Bernasca","Salvino","Porcu","Lefevre","Thompson","Vagneri","Sojuzzi","La Foppa","Dervalaporta","Sforza","Visconti","De Medici","Feltrinelli","Zaccuri","Scoeura","Caselli","Wagner","Berlinguer","Ol Careàs","Pisaelfoeuc","Puteo","Diletta","Vlocci","Prondella","Veneranda Fabbrica","Scapece","Mas-cio","Togliatti","Tramaglino","Ienneri","Kowalsky","Romano","Perottini","Torvalds","da Giussano","Mantaro","Asburgo","Sala","Altissimo","Maroni","Olsone","Popov","Sensi","Bellotti","Conti","Invernizzi","Nicolello","Legramandi","Olivetti","Vignana","Carminati","Zennaro","Savoia","Figliodigesù","De Gianfiö","Ferrero","Colombo","Lombardi","Basile","Degasperi","Culot","Toccaferro","Lafica","Granlaüradur","Fantozzi","Nagotta","Mosconi","Perazzini","Mussolesi","Schavòn"]
-sd = nomi[random.randint(0,90)]+ " " + cognomi[random.randint(0,90)]
-ss = nomi[random.randint(0,90)]+ " " + cognomi[random.randint(0,90)]
-premier = nomi[random.randint(0,90)]+ " " + cognomi[random.randint(0,90)]
-si = nomi[random.randint(0,90)]+ " " + cognomi[random.randint(0,90)]
+nomi = ["Mario","Alessio","Patrick","Lumbardo","Linus","Bartolo","Ariel","Gaetano","Alcide","Salvatore","Fermo","Giuliano","Domenico","Albano","Celere","Giulio Cesare","Beniamino","Zebo","Bambin","Nazario","Paoletto","Glorioso","Gilberto","Helmut","Lotario","Arnaldo","Mauro Lupo","Teodorico","Ezechele","Alluro","Antioco","Barisone","Lucio","Cornelio","Tiberio","Mariello","Amerigo","Ernesto","Adamo","Karol","Manfredi","Rotario","Antonello","Alessandro","Michele","Amado","Nikolai","Egidio","Tracaro","Arcangelo","Duomo","Attanasio","Garrumo","Giandomenico","Ciociaro","Giorgio","Licio","Calogero","Mona","Germano","Ugo","Matteo","Attilio","Teodorico","Crescenzo","Arimanno","Floriano","Baldassarre","Berto","Roso","Catalino","Tromlino","Ambroeus","Francesco","Abbondio","Nunzio","Gerardo","Silvio","Alberto","Gianni","Teresio","Ambrogio","Anselmo","Giovese","Amintore","Italo","Arcibaldo","Justinià","Danjuro","Bortolo","Augusto","Piergastone","Diego","Giulio","Giuàn","Azeglio","Adolfo","Benito","Natale","Nazareno","Jorji"]
+cognomi = ["Brambilla","Fumagalli","Rossi","dell'Incoronata","Schulzi","Fabero","Kofler","Coffiere","Verdi","Capellaro","da Pirla","Almirante","Casadei","Tettamanzi","Pessotti","Mastranzo","Nasdrovie","Dalle Colonie","Bono","Bevitacchini","Bianchi","Bernasca","Salvino","Porcu","Lefevre","Thompson","Vagneri","Sojuzzi","La Foppa","Dervalaporta","Sforza","Visconti","De Medici","Feltrinelli","Zaccuri","Scoeura","Caselli","Wagner","Berlinguer","Ol Careàs","Pisaelfoeuc","Puteo","Diletta","Vlocci","Prondella","Veneranda Fabbrica","Scapece","Mascio","Togliatti","Tramaglino","Ienneri","Kowalsky","Tomat","Muzzo","Putin","Ostuni","Latarga","Narodna","Piattirotti","Colleone","Mandi","Fanfani",,"Romano","Perottini","Torvalds","da Giussano","Mantaro","Asburgo","Sala","Altissimo","Maroni","Olsone","Popov","Sensi","Bellotti","Conti","Invernizzi","Nicolello","Legramandi","Olivetti","Vignana","Carminati","Zennaro","Savoia","Figliodigesù","De Gianfiö","Ferrero","Colombo","Lombardi","Basile","Degasperi","Culot","Toccaferro","Lafica","Granlaüradur","Fantozzi","Nagotta","Mosconi","Perazzini","Mussolesi","Schavòn"]
+sd = nomi[random.randint(0,100)]+ " " + cognomi[random.randint(0,100)]
+ss = nomi[random.randint(0,100)]+ " " + cognomi[random.randint(0,100)]
+premier = nomi[random.randint(0,100)]+ " " + cognomi[random.randint(0,100)]
+si = nomi[random.randint(0,100)]+ " " + cognomi[random.randint(0,100)]
 pa = ["Partito Liberale", "Lega Milanese", "Unione Popolare","Partito Sociale Liberale","Movimento Federale del Lavoro", "Movimento delle Libertà", "Casa Riformista", "Il Lume della Ragione","Partito di Sua Maestà il Maiale","Destra per l'Italia Unita","Liberali d'Emilia Romagna","Uomo Qualunque","Destra Latina","Patrito contro le Pantofole", "Casa delle Riforme", "Föra di ball! Milano Libera","Destra Piemontese","Destra Arcobaleno","Movimento Fascio Repubblicano","Partito Socialista Federale","Milano Bene di Tutti",]
 pb = ["Milano Rossa", "Partito Ecologista", "Lega dei Contadini", "Partito per le frontiere aperte","Alleanza di Democrazia","Sinistra Triveneta", "Progressismo è Democrazia", "Rivoluzione Popolare","Civiltà Umana","Democrazia Pastafariana","Socialisti Marchigiani","Movimento del Panino","Cattolici di Sinistra per l'Europa", "MoviMento Quattro Soli", "Equità nelle ricchezze", "Alleanza di Sinistra","Lega Popolare Slava","Microfono Civico","Monarchia & Popolo","Lotta Milano","Democrazia Cattolica Socialista",]
 apar = ["Unione dei Radicali", "Giustizia di Destra", "Libertà Comunista", "Movimento Letterario","Partito della Scienza"]
@@ -398,15 +398,15 @@ def poss():
 		print "Retata a Cesano Boscone"
 		if turno%2 == 0:
 			print "Arrestato", ss
-			ss = nomi[random.randint(0,90)]+ " " + cognomi[random.randint(0,90)]
+			ss = nomi[random.randint(0,100)]+ " " + cognomi[random.randint(0,100)]
 			ele2 = ele2 - 10
 		elif turno%5 == 0:
 			print "Arrestato", si
-			si = nomi[random.randint(0,90)]+ " " + cognomi[random.randint(0,90)]
+			si = nomi[random.randint(0,100)]+ " " + cognomi[random.randint(0,100)]
 			elettori = elettori - 10
 		else:
 			print "Arrestato", sd
-			sd = nomi[random.randint(0,90)]+ " " + cognomi[random.randint(0,90)]
+			sd = nomi[random.randint(0,100)]+ " " + cognomi[random.randint(0,100)]
 			ele1 = ele1 - 10
 		gioco()
 	elif poss == 44:
@@ -516,7 +516,7 @@ def poss():
 		if turno%2 == 0:
 			print "Scandalo a Milano"
 			print "Grande azienda paga mazzette per leggi favorevoli, coinvolti tutti i partiti"
-			print "Arrestato", nomi[random.randint(0,90)]+ " " + cognomi[random.randint(0,90)] ,", presidente della società"
+			print "Arrestato", nomi[random.randint(0,100)]+ " " + cognomi[random.randint(0,100)] ,", presidente della società"
 			ele1 = ele1 - 20
 			ele2 = ele2 - 20
 			eleap = eleap - 10
@@ -740,7 +740,7 @@ def gioco():
 			premier = sd
 		else:
 			print "Nessun eletto: Capo dello Stato nomina governo tecnico"
-			premier = nomi[random.randint(0,90)]+ " " + cognomi[random.randint(0,90)]
+			premier = nomi[random.randint(0,100)]+ " " + cognomi[random.randint(0,100)]
 	entrate = possib[random.randint(0,9)]
 	uscite = possib[random.randint(0,9)]
 	if turno%2 == 0:
@@ -798,9 +798,9 @@ def gioco():
 		eleap = 0
 		depa = 0
 	if turno%25 == 0:
-		sd = nomi[random.randint(0,90)]+ " " + cognomi[random.randint(0,90)]
-		ss = nomi[random.randint(0,90)]+ " " + cognomi[random.randint(0,90)]
-		si = nomi[random.randint(0,90)]+ " " + cognomi[random.randint(0,90)]
+		sd = nomi[random.randint(0,100)]+ " " + cognomi[random.randint(0,100)]
+		ss = nomi[random.randint(0,100)]+ " " + cognomi[random.randint(0,100)]
+		si = nomi[random.randint(0,100)]+ " " + cognomi[random.randint(0,100)]
 	if turno%4 == 0:
 		gloc = elettori*18/(elettori+ele1+ele2+eleap)
 		coeffi = [0.5,0.75,1,1.25]
