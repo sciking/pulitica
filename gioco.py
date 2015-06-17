@@ -9,6 +9,7 @@ import random
 turno = 1
 elettori = 15
 mandatop = 0
+nome = ""
 flop = 0
 soldi = 100000000
 possib = [-100000, - 75000, -50000, 0, 50000, 100000, 250000, 500000, 750000, 1000000] #9 elementi 0-9
@@ -48,7 +49,8 @@ print """ Benvenuto. L'assemblea del Partito Indipendente Milanese, visti i tuoi
 print " Gioco creato da Sciking"
 #difficile = raw_input("Vuoi giocare in modalità facile, medio o difficile? ")
 #difficile = difficile.lower()
-nome = raw_input("Come ti chiami, Presidente?: ")
+while nome == "":
+	nome = raw_input("Come ti chiami, Presidente?: ")
 raw_input("Premi invio per iniziare:")
 os.system("clear")
 def poss():
@@ -147,8 +149,8 @@ def poss():
 		print "Una nostra mozione al Parlamento per diminuire le tasse passa! Il Popolo è soddisfatto."
 		elettori = elettori + 2
 		sindaci = sindaci + 1
-		ele1 = ele1 - 2
-		ele2 = ele2 + 2
+		ele1 = ele1 + random.randint(-2,2)
+		ele2 = ele2 + random.randint(-2,2)
 		eleap = eleap + random.randint(-1,1)
 		soldi = soldi - 500000
 		gioco()
@@ -631,7 +633,7 @@ def referendum():
 	global ele1 
 	global ele2
 	print "PLEBISCITO - STRUMENTO DI DEMOCRAZIA DIRETTA"
-	quesiti = ["per l'abolizione della detenzione preventiva","per l'adozione indifferenziata a coppie omo ed eterosessuali","contro l'insegnamento della  matematica","per l'illegalità delle pantofole","per inserire l'obbligo vaccinale totale","per espellere gli immigrati clandestini","per migliorare gli accordi con la Polonia","per chiedere una licenza ai prestiné","per usare gli aerei nei trasporti interurbani","contro la guida del telefono","per abolire il parquet","per adottare ufficialmente la grafia moderna del milanese","contro l'alleanza con la Provenza","per migliorare i cessi pubblici","per comperare nuove corriere Neopleb","contro l'affolamento carcerario","per arrestare i corrotti","per diminuire i postriboli","per limitare i farmaci psicotropi","per limitare l'altezza dei tacchi a 8 centimetri","per abolire il monopolio telefonico della SET","per finanziare la squadra del folball","contro l'inquinamento ambientale","per abolire le norme antibestemmia","contro la malavita","per legalizzare l'uso alimentare del gatto","per abolire il software proprietario","contro il fumo di sigaretta","per il nucleare nella Repubblica Milanese","contro le religioni","contro la malasanità","per far valere le lauree europee a Milano","per creare la Provincia di Vanzaghello","per avere i taxi gialli","contro il tetano","per l'abolizione dei licei","per abolire gli inni comunali","per abolire i numeri 668 a pagamento","per diminuire il costo di iscrizione alle poste","contro le droghe","per aumentare le libertà personali","per introdurre la prevenzione delle malattie sessuali a spese dello stato","contro il gioco d'azzardo","per istituire una Regione del Canavese","per tutelare le gondole a Cmâc"]
+	quesiti = ["per l'abolizione della detenzione preventiva","per l'adozione indifferenziata a coppie omo ed eterosessuali","contro l'insegnamento della  matematica","per l'illegalità delle pantofole","per inserire l'obbligo vaccinale totale","per espellere gli immigrati clandestini","per migliorare gli accordi con la Polonia","per chiedere una licenza ai prestiné","per usare gli aerei nei trasporti interurbani","contro la guida del telefono","per abolire il parquet","per adottare ufficialmente la grafia moderna del milanese","contro l'alleanza con la Provenza","per migliorare i cessi pubblici","per comperare nuove corriere Neopleb","contro l'affolamento carcerario","per arrestare i corrotti","per diminuire i postriboli","per limitare i farmaci psicotropi","per limitare l'altezza dei tacchi a 8 centimetri","per tutelare il limoncello","contro l'antiscienza","per sbattere in galera gli antivaccinisti","per abbattere le scuole private con una ruspa","contro la prostituzione nelle strade","per abolire il monopolio telefonico della SET","per finanziare la squadra del folball","contro l'inquinamento ambientale","per abolire le norme antibestemmia","contro la malavita","per legalizzare l'uso alimentare del gatto","per abolire il software proprietario","contro il fumo di sigaretta","per il nucleare nella Repubblica Milanese","contro le religioni","contro la malasanità","per far valere le lauree europee a Milano","per creare la Provincia di Vanzaghello","per avere i taxi gialli","contro il tetano","per l'abolizione dei licei","per abolire gli inni comunali","per abolire i numeri 668 a pagamento","per diminuire il costo di iscrizione alle poste","contro le droghe","per aumentare le libertà personali","per introdurre la prevenzione delle malattie sessuali a spese dello stato","contro il gioco d'azzardo","per istituire una Regione del Canavese","per tutelare le gondole a Cmâc"]
 	random.shuffle(quesiti)
 	print "Quesito", quesiti[1]
 	sceltak = ["si","no"]
