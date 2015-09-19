@@ -8,6 +8,7 @@ print "Basato su 'Fuga col malloppo'"
 import random
 turno = 1
 elettori = 15
+ko = 0
 mandatop = 0
 nome = ""
 flop = 0
@@ -340,10 +341,12 @@ def poss():
 		print "Segretario Partito Vegan Animalaro: Si spetimenti sui politici"
 		print "Candidato Comico dell'anno:", sd, "annunzia querela" #in un paese ideale i vari "STOP VIVISEZZIONE" sarebbero candidati allo stesso premio
 		if turno%2 == 0:
-			elegio = raw_input("Vuoi investire 2000Å in campagna elettorale? \n Scrivi 'si' per accettare")
+			os.system("clear")
+			elegio = raw_input("Vuoi investire 2000Å in campagna elettorale? \n Scrivi 'si' per accettare: ")
 			if elegio == "si":
 				soldi = soldi - 2000
 				elettori = elettori + 1
+				os.system("clear")
 		gioco()
 	elif poss == 37:
 		print "Cura Di Vacio, parlamento approva mozione: Inefficace"
@@ -704,6 +707,7 @@ def gioco():
 	global si
 	global sinistra
 	global destra
+	global ko
 	global parlamento
 	global leggi
 	global deputati
@@ -746,26 +750,32 @@ def gioco():
 			else:
 				premier = si
 				print "Nominato premier il nostro segretario"
+			ko = 0
 		elif parlamento/depd < 2:
 			print "L'Indipendente di Milano \n Destra al Governo"
 			ele1 = ele1 + 3
 			premier = sd
+			ko = 0
 		elif parlamento/deps < 2:
 			print "L'Indipendente di Milano \n Sinistra al governo"
 			ele2 = ele2 + 3
 			premier = ss
-		elif parlamento/(deps+depa) <2:
+			ko = 0
+		elif parlamento/(deps+depa) <2 and ko == 0:
 			print "L'Indipendente di Milano \n Sinistra al Governo, ma coalizzata"
 			premier = ss
-		elif parlamento/(deputati+depa) <2:
+			ko = 1
+		elif parlamento/(deputati+depa) <2 and ko == 0:
 			print "L'Indipendente di Milano \n Siamo al Governo, ma coalizzati"
 			if caput == 0:
 				premier = nome
 			else:
 				premier = si
-		elif parlamento/(depd+depa) <2:
+			ko = 1
+		elif parlamento/(depd+depa) <2 and ko == 0:
 			print "L'Indipendente di Milano \n Destra al Governo, ma coalizzata"
 			premier = sd
+			ko = 1
 		else:
 			print "Nessun eletto: Capo dello Stato nomina governo tecnico"
 			premier = nomi[random.randint(0,160)]+ " " + cognomi[random.randint(0,160)]
