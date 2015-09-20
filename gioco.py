@@ -8,7 +8,7 @@ print "Basato su 'Fuga col malloppo'"
 import random
 turno = 1
 elettori = 15
-ko = 0
+ko = 1
 mandatop = 0
 nome = ""
 flop = 0
@@ -578,7 +578,7 @@ def poss():
 	elif poss == 57: #qua si perdono i danè :D
 		lum = random.randint(1,6)
 		if lum == 1:
-			print "Scandalo Malasanità: Milano risarcirà due milioni e i partiti pagheranno la merà"
+			print "Scandalo Malasanità: Milano risarcirà due milioni e i partiti pagheranno la metà"
 			soldi = soldi/2
 		elif lum == 2:
 			print "Il Partito vince alla Lotteria 5500Å"
@@ -716,7 +716,9 @@ def gioco():
 	"""if turno%4 == 0:
 		if turno > 15 and elettori > 15:
 		print "La campagna elettorale è impo"""
-	if turno%5 == 0:
+	if turno%5 == 0 or depa > 35:
+		if depa > 35:
+			print "Crisi di Governo, elezioni straordinarie!"
 		deputati = elettori*parlamento/(elettori+ele1+ele2+eleap)# elettori : totale = x : parlamento
 		depd = ele1*parlamento/(elettori+ele1+ele2+eleap)
 		deps = ele2*parlamento/(elettori+ele1+ele2+eleap)
@@ -765,6 +767,28 @@ def gioco():
 			print "L'Indipendente di Milano \n Sinistra al Governo, ma coalizzata"
 			premier = ss
 			ko = 1
+		elif parlamento/(deps+elettori) <2 and ko == 0:
+			print "L'Indipendente di Milano \n Noi al governo con la sinistra."
+			if turno%10 == 0:
+				if caput == 0:
+					premier = nome
+				else:
+					premier = si
+					print "Nominato premier il nostro segretario"
+			else:
+				premier = ss
+			ko = 1
+		elif parlamento/(depd+elettori) <2 and ko == 0:
+			print "L'Indipendente di Milano \n Noi al governo con la destra"
+			if turno%10 == 0:
+				if caput == 0:
+					premier = nome
+				else:
+					premier = si
+					print "Nominato premier il nostro segretario"
+			else:
+				premier = sd
+			ko = 1
 		elif parlamento/(deputati+depa) <2 and ko == 0:
 			print "L'Indipendente di Milano \n Siamo al Governo, ma coalizzati"
 			if caput == 0:
@@ -779,6 +803,7 @@ def gioco():
 		else:
 			print "Nessun eletto: Capo dello Stato nomina governo tecnico"
 			premier = nomi[random.randint(0,160)]+ " " + cognomi[random.randint(0,160)]
+			ko = 0
 	if turno%2 == 0:
 		soldi = soldi + 2500
 	print "Hai", soldi, "Å"
@@ -842,10 +867,10 @@ def gioco():
 		gloca = int(gloc*coeff)
 	if turno%10 == 0 and turno > 9:
 		referendum()
-	if turno%3 == 0:
+	"""if turno%3 == 0:
 		if turno%2 == 0:
-			print
+			print"""
 		
 	os.system("clear")
 	poss()
-gioco()		# computerblog.ga no alle pantofole :D
+gioco()	
