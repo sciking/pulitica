@@ -340,6 +340,7 @@ def poss():
 	elif poss == 36:
 		print "Segretario Partito Vegan Animalaro: Si spetimenti sui politici"
 		print "Candidato Comico dell'anno:", sd, "annunzia querela" #in un paese ideale i vari "STOP VIVISEZZIONE" sarebbero candidati allo stesso premio
+		raw_input("Premi invio per continuare")
 		if turno%2 == 0:
 			os.system("clear")
 			elegio = raw_input("Vuoi investire 2000Å in campagna elettorale? \n Scrivi 'si' per accettare: ")
@@ -575,7 +576,7 @@ def poss():
 		ele2 = ele2 - 3
 		eleap = eleap - 1
 		elettori = elettori - 3	
-	elif poss == 57: #qua si perdono i danè :D
+	elif poss == 57: #qua si perdono i danè :D (o mej, se perdeven)
 		lum = random.randint(1,6)
 		if lum == 1:
 			print "Scandalo Malasanità: Milano risarcirà due milioni e i partiti pagheranno la metà"
@@ -601,7 +602,7 @@ def poss():
 			soldi = soldi - 1000
 			elettori = elettori + 2
 		gioco()
-	elif poss == 58: #qui si guadagnano i danè invece :D
+	elif poss == 58: #qui si guadagnano i danè invece :D (me süra)
 		luma = random.randint(1,6)
 		if luma == 1:
 			print "Scie idriche: Partito vince causa contro sostenitori"
@@ -719,6 +720,7 @@ def gioco():
 	if turno%5 == 0 or depa > 35:
 		if depa > 35:
 			print "Crisi di Governo, elezioni straordinarie!"
+		eleap = 10
 		deputati = elettori*parlamento/(elettori+ele1+ele2+eleap)# elettori : totale = x : parlamento
 		depd = ele1*parlamento/(elettori+ele1+ele2+eleap)
 		deps = ele2*parlamento/(elettori+ele1+ele2+eleap)
@@ -730,17 +732,26 @@ def gioco():
 			mandatop = mandatop + 1
 			print "Mandato:", mandatop
 			caput = 1
+			elettori = elettori + 1
 			decas = 1 #a milano solo un mandato per volta, quindi...
 			#capostato()
 		elif parlamento/deputati < 2:
 			print "Salve, Presidente. Abbiamo eletto il nostro nuovo presidente. Aumenterà i nostri elettori."
-			elettori = elettori + 10
+			elettori = elettori + 1
 			sindaci = sindaci + 3
 			caput = 0
 			decas = 0
 		else:
 			caput = 0
 			decas = 0
+		if parlamento/deps < 2:
+			print sinistra, "elegge il capo dello Stato"
+			ele2 = ele2 + 1
+		if parlamento/depd < 2:
+			print destra, "elegge il capo dello Stato"
+			ele1 = ele1 + 1
+		
+
 	if turno%5 == 0:
 		#calcola chi è al governo
 		if parlamento/deputati < 2:
@@ -817,8 +828,8 @@ def gioco():
 	print "Sindaci", sindaci, "/4000"
 	print "Gov.Locali:", gloca, "/18"
 	print "Altri:"
-	print "Elettori", destra, ":", ele1
-	print "Elettori", sinistra, ":", ele2
+	print "Elettori", destra, ":", ele1, "\t Segretario:", sd
+	print "Elettori", sinistra, ":", ele2, "\t Segretario:", ss
 	print "LEGGE DEL GIORNO:"
 	try:
 		r = random.randint(1,2)
@@ -867,10 +878,6 @@ def gioco():
 		gloca = int(gloc*coeff)
 	if turno%10 == 0 and turno > 9:
 		referendum()
-	"""if turno%3 == 0:
-		if turno%2 == 0:
-			print"""
-		
 	os.system("clear")
 	poss()
 gioco()	
