@@ -1,7 +1,7 @@
 #!/usr/bin/ python
 # -*- coding: utf-8 -*-
 import os
-os.system("clear")
+os.system('cls' if os.name == 'nt' else 'clear')
 print "Pulitica"
 print "Il gioco in cui devi entrare in parlamento e vincere le elezioni!"
 print "Basato su 'Fuga col malloppo'"
@@ -55,7 +55,7 @@ print " Gioco creato da Sciking"
 while nome == "":
 	nome = raw_input("Come ti chiami, Presidente?: ")
 raw_input("Premi invio per iniziare:")
-os.system("clear")
+os.system('cls' if os.name == 'nt' else 'clear')
 def poss():
 	global elettori
 	global flop
@@ -342,12 +342,12 @@ def poss():
 		print "Candidato Comico dell'anno:", sd, "annunzia querela" #in un paese ideale i vari "STOP VIVISEZZIONE" sarebbero candidati allo stesso premio
 		raw_input("Premi invio per continuare")
 		if turno%2 == 0:
-			os.system("clear")
+			os.system('cls' if os.name == 'nt' else 'clear')
 			elegio = raw_input("Vuoi investire 2000Å in campagna elettorale? \n Scrivi 'si' per accettare: ")
 			if elegio == "si":
 				soldi = soldi - 2000
 				elettori = elettori + 1
-				os.system("clear")
+				os.system('cls' if os.name == 'nt' else 'clear')
 		gioco()
 	elif poss == 37:
 		print "Cura Di Vacio, parlamento approva mozione: Inefficace"
@@ -642,7 +642,7 @@ def poss():
 			
 	gioco()
 def referendum():
-	os.system("clear")
+	os.system('cls' if os.name == 'nt' else 'clear')
 	global elettori
 	global soldi
 	global ele1 
@@ -680,7 +680,7 @@ def referendum():
 	print "Il popolo ha scelto", sceltav
 	raw_input("Premi Invio per continuare")
 	soldi = soldi - 250
-	os.system("clear")
+	os.system('cls' if os.name == 'nt' else 'clear')
 	poss()
 		
 
@@ -878,6 +878,6 @@ def gioco():
 		gloca = int(gloc*coeff)
 	if turno%10 == 0 and turno > 9:
 		referendum()
-	os.system("clear")
+	os.system('cls' if os.name == 'nt' else 'clear')
 	poss()
 gioco()	
