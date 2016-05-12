@@ -333,13 +333,13 @@ def poss():
 		elettori = elettori - 2
 		gioco()
 	elif poss == 32:
-		if keleko = 0
-		print "Primo deputato di origini polacche eletto il parlamento nelle nostre file: Siamo campioni d'integrazione" #dedicato a Dalan <3 
+		if keleko == 0:
+			print "Primo deputato di origini polacche eletto il parlamento nelle nostre file. Siamo campioni d'integrazione" #dedicato a Dalan <3 
 		if random.randint(1,5) == 3:
 			print "Riviste scandalistiche parlano di relazione tra il Nostro Segretario e la sorella di un deputato"
-		elettori = elettori + 2
 		else:
 			print nome,"urla 'Visca Catalunya lliure', indipendentisti ci amano!"
+		elettori = elettori + 2
 		gioco()
 	elif poss == 33:
 		print "Droga Leun, nuova piaga: I Partiti uniti per combatterla"
