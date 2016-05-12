@@ -28,7 +28,7 @@ dichiarazionipol = ["Creeremo il sistema presidenziale"]
 dichiarazionieco = ["Abbasseremo le tasse"]
 dichiarazionieti = ["Si all'aborto incondizionato","La vera vittoria non è introdurre il matrimonio gay, ma abolirlo per tutti!" ]
 dichiarazionialtro = ["Milano vincerà i mondiali del folball!"]
-gloca = 1
+#gloca = 1
 nomi = ["Mario","Alessio","Patrick","Lumbardo","Maria Augusta","Rin Michela","Rita","Altiero","Cesara","Giorgia","Francesco Ferdinando","Vittoria","Italia","Francesca Beatrice","Linus","Bartolo","Ariel","Gaetano","Alcide","Salvatore","Fermo","Giuliano","Domenico","Albano","Celere","Giulio Cesare","Valeria","Nicoletta","Ekaternia Giorgia","Jason Ambrogio","Alessia","Emilia","Selena","Ermenegilda","Teodolinda","Erminio","Beniamino","Zebo","Bambin","Nazario","Paoletto","Glorioso","Gilberto","Helmut","Lotario","Arnaldo","Mauro Lupo","Teodorico","Noemi","Giulia","Adelaide","Roberta","Candace","Pier Giorgio","Andrea","Virgilio","Dante","Nazareno Michele","Ezechele","Lissander","Benìn","Giazint","Diodatt","Domenegh","Gnazzi","Grigoeu","Poldo","Zerill","Polonia","Alluro","Victoria","Agnese","Adelaide","Elvezia","Amanda","Iustizia","Caterina","Martina","Fiorenza","Melissa","Antioco","Barisone","Lucio","Cornelio","Peppone","Gastone","Genoveffo","Giasone","Gavino","Arnold","Cassio","Vercingetorice","Nerone","Anzolo","Tiberio","Mariello","Amerigo","Ernesto","Adamo","Karol","Manfredi","Rotario","Antonello","Alessandro","Michele","Amado","Nikolai","Egidio","Tracaro","Arcangelo","Duomo","Attanasio","Garrumo","Giandomenico","Ciociaro","Giorgio","Licio","Calogero","Mona","Germano","Ugo","Matteo","Attilio","Teodorico","Crescenzo","Arimanno","Floriano","Baldassarre","Berto","Roso","Catalino","Tromlino","Ambroeus","Francesco","Abbondio","Nunzio","Gerardo","Silvio","Alberto","Gianni","Teresio","Ambrogio","Anselmo","Giovese","Amintore","Italo","Arcibaldo","Justinià","Danjuro","Bortolo","Augusto","Piergastone","Diego","Giulio","Giuàn","Azeglio","Adolfo","Benito","Natale","Nazareno","Jorji"]
 cognomi = ["Brambilla","Fumagalli","Rossi","dell'Incoronata","Schulzi","Fabero","Kofler","Coffiere","Verdi","Capellaro","da Pirla","Almirante","Casadei","Tettamanzi","Pessotti","Mastranzo","Nasdrovie","Dalle Colonie","Bono","Rovatacchini","Bianchi","Bernasca","Salvino","Porcu","Lefevre","Thompson","Vagneri","Sojuzzi","La Foppa","Dervalaporta","Sforza","Visconti","De Medici","Ottone","Di Calino","Aromano","Megrato","Suscrofa","Lazzaroni","Formaggi","Giamboni","Della Libertà","Di Pioltello","Feltrinelli","Zaccuri","Scoeura","Caselli","Wagner","Bottazzi","Guadone","de Brescello","Prestinée","Caterborino","Mariano","Eleatico","Ploeuf","Taleano","Loserbiddio","Berlinguer","Ol Careàs","Pisaelfoeuc","Puteo","Diletta","Vlocci","Prondella","Mangiagalli","Cordileone","De Nicola","Battisti","Terione","Milanese","Muratore","Scipoti","Auffo","Insinavìi","Veneranda Fabbrica","Scapece","Rensi","Bosse","Cetipaga","Dellinfermi","Legnano","Werrant","Scarpa","Soccuso","Varvaro","Lonbarto","Mascio","Togliatti","Tramaglino","Ienneri","Kowalsky","Tomat","Muzzo","Putin","Ostuni","Latarga","Narodna","Piattirotti","Colleone","Mandi","Fanfani","Corsi","Romano","Perottini","Torvalds","da Giussano","Mantaro","Asburgo","Sala","Passalapalla","Plebfiore","Vaccini","De Stefano","Pizza","Rotino","Spoeusa","Alfulo","Cappi","Di Piero","Altissimo","Maroni","Olsone","Popov","Sensi","Bellotti","Conti","Invernizzi","Nicolello","Legramandi","Olivetti","Vignana","Carminati","Zennaro","Savoia","Figliodigesù","De Gianfiö","Ferrero","Colombo","Manzon","Pravesin","Giussan","Lampugnan","Tanzi","Tanz","Galaràa","Bernascon","Hamzar","Rivetti","Lombardi","Basile","Degasperi","Culot","Toccaferro","Lafica","Granlaüradur","Fantozzi","Nagotta","Mosconi","Perazzini","Mussolesi","Schavòn"]
 sd = nomi[random.randint(0,160)]+ " " + cognomi[random.randint(0,160)]
@@ -694,7 +694,7 @@ def gioco():
 	global soldi
 	global r
 	global gloc
-	global gloca
+	#global gloca
 	global emergenza
 	global nome
 	global flop
@@ -720,6 +720,7 @@ def gioco():
 	if turno%5 == 0 or depa > 35:
 		if depa > 35:
 			print "Crisi di Governo, elezioni straordinarie!"
+			eleap = int(eleap/3)
 		eleap = 10
 		deputati = elettori*parlamento/(elettori+ele1+ele2+eleap)# elettori : totale = x : parlamento
 		depd = ele1*parlamento/(elettori+ele1+ele2+eleap)
@@ -826,7 +827,7 @@ def gioco():
 	print "Parlamentari", sinistra, ":",deps, "/", parlamento
 	print "Parlamentari misti:", depa, "/", parlamento
 	print "Sindaci", sindaci, "/4000"
-	print "Gov.Locali:", gloca, "/18"
+	#print "Gov.Locali:", gloca, "/18"
 	print "Altri:"
 	print "Elettori", destra, ":", ele1, "\t Segretario:", sd
 	print "Elettori", sinistra, ":", ele2, "\t Segretario:", ss
@@ -871,13 +872,14 @@ def gioco():
 		sd = nomi[random.randint(0,160)]+ " " + cognomi[random.randint(0,160)]
 		ss = nomi[random.randint(0,160)]+ " " + cognomi[random.randint(0,160)]
 		si = nomi[random.randint(0,160)]+ " " + cognomi[random.randint(0,160)]
-	if turno%4 == 0:
-		gloc = elettori*18/(elettori+ele1+ele2+eleap)
-		coeffi = [0.5,0.75,1,1.25]
-		coeff = coeffi[random.randint(0,3)]
-		gloca = int(gloc*coeff)
+	#if turno%4 == 0:
+	#	gloc = elettori*18/(elettori+ele1+ele2+eleap)
+	#	coeffi = [0.5,0.75,1,1.25]
+	#	coeff = coeffi[random.randint(0,3)]
+	#	gloca = int(gloc*coeff)
 	if turno%10 == 0 and turno > 9:
 		referendum()
 	os.system('cls' if os.name == 'nt' else 'clear')
 	poss()
 gioco()	
+c
