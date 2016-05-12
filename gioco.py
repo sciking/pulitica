@@ -334,7 +334,6 @@ def poss():
 		gioco()
 	elif poss == 32:
 		if keleko == 0:
-		if random.randint(1,5) == 3:
 			print "Primo deputato di origini polacche eletto il parlamento nelle nostre file. Siamo campioni d'integrazione" #dedicato a Dalan <3 
 			print "Riviste scandalistiche parlano di relazione tra il Nostro Presidente e la sorella di un deputato"
 		else:
