@@ -179,16 +179,16 @@ def poss():
 			print ss, "grida al complotto della magistratura nera"
 			ele2 = ele2-4
 		if premier == sd:
-			print ss, "chiede verità e giustizia"
+			print sd, "chiede verità e giustizia"
 			ele1 = ele1-3
 			ele2 = ele2+1
 			elettori=elettori+1
 		if premier == si:
-			print ss, "chiede le dimissioni del ministro"
+			print si, "chiede le dimissioni del ministro"
 			ele1 = ele1 + 1
 			ele2 = ele2 + 2
 		if premier == nome:
-			print ss, "si dimette! Segretario del PIM nuovo Premier"
+			print nome, "si dimette! Segretario del PIM nuovo Premier"
 			ele2 = ele2+2
 			ele1=ele1+1
 			elettori=elettori+1
@@ -334,9 +334,9 @@ def poss():
 		gioco()
 	elif poss == 32:
 		if keleko == 0:
-			print "Primo deputato di origini polacche eletto il parlamento nelle nostre file. Siamo campioni d'integrazione" #dedicato a Dalan <3 
 		if random.randint(1,5) == 3:
-			print "Riviste scandalistiche parlano di relazione tra il Nostro Segretario e la sorella di un deputato"
+			print "Primo deputato di origini polacche eletto il parlamento nelle nostre file. Siamo campioni d'integrazione" #dedicato a Dalan <3 
+			print "Riviste scandalistiche parlano di relazione tra il Nostro Presidente e la sorella di un deputato"
 		else:
 			print nome,"urla 'Visca Catalunya lliure', indipendentisti ci amano!"
 		elettori = elettori + 2
@@ -882,7 +882,7 @@ def gioco():
 	if eleap < 0 or depa < 0:
 		eleap = 0
 		depa = 0
-	if turno%25 == 0:
+	if turno%15 == 0:
 		sd = nomi[random.randint(0,165)]+ " " + cognomi[random.randint(0,165)]
 		ss = nomi[random.randint(0,165)]+ " " + cognomi[random.randint(0,165)]
 		si = nomi[random.randint(0,165)]+ " " + cognomi[random.randint(0,165)]
