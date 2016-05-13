@@ -103,7 +103,7 @@ def poss():
 	print "L'Indipendente di Milano"
 	#global deputati
 	random.shuffle(leggi) #dovrebbe mescolare ad mentulam canis la lista ma el va minga trop ben...
-	poss = random.randint(1,60)
+	poss = random.randint(1,65)
 	if poss == 1:
 		print "Sindaco delle Liste Locali diserta nel Partito Indipendente"
 		sindaci = sindaci + 1
@@ -192,6 +192,7 @@ def poss():
 			ele2 = ele2+2
 			ele1=ele1+1
 			elettori=elettori+1
+			premier = si
 
 	elif poss == 12:
 		print "OGM consentiti, è legge. I sindaci non approvano la legge unanime"
@@ -652,6 +653,40 @@ def poss():
 		ele2 = ele2 - 2
 		eleap = eleap - 1
 		gioco()
+	elif poss == 61:
+		print "Ministro della Salute: Si informi la popolazione sulla sperimentazione animale"
+		ele1 = ele1 - random.randint(-3,2)
+		ele2 = ele2 - random.randint(-3,2)
+		elettori = elettori - random.randint(-3,2)
+	elif poss == 62:
+		print "Grave scandalo nel", sinistra, ": Prostitute minorenni e droga, persi tantissimi voti"
+		ele2 = int(ele2*0.75)
+		ele1 = ele1 + random.randint(-1,6)
+		elettori = elettori + random.randint(-1,6)
+		eleap = eleap + random.randint(-1,2)
+	elif poss == 63:
+		print "Grave scandalo nel", destra, ": Corruzione e traffico di umani, persi tantissimi voti"
+		ele1 = int(ele1*0.75)
+		ele2 = ele2 + random.randint(-1,6)
+		elettori = elettori + random.randint(-1,6)
+		eleap = eleap + random.randint(-1,2)
+	elif poss == 64:
+		if turno %2 == 0:
+			print "Grave scandalo nel PIM: Peculato e furto, persi tantissimi voti"
+			elettori = int(elettori*0.75)
+			ele2 = ele2 + random.randint(-1,6)
+			ele1 = ele1 + random.randint(-1,6)
+			eleap = eleap + random.randint(-1,2)
+		else:
+			print "Vescovo di Milano bestemmia dopo una caduta"
+	elif poss == 65:
+		print "Amministrazione milanese: L'Esposizione Museale mondiale va benone!"
+		ele1 = ele1 - random.randint(-3,2)
+		ele2 = ele2 - random.randint(-3,2)
+		elettori = elettori - random.randint(-3,2)
+		
+		
+
 			
 	gioco()
 def referendum():
