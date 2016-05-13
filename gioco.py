@@ -775,30 +775,30 @@ def gioco():
 		deps = ele2*parlamento/(elettori+ele1+ele2+eleap)
 		depa = eleap*parlamento/(elettori+ele1+ele2+eleap)
 		sindaci = elettori*4000/(elettori+ele1+ele2+eleap)
-		if parlamento/deputati < 2 and flop < 2 and decas == 0:
+		if (parlamento+5)/deputati < 2 and decas == 0:
 			print """Salve signor presidente. Siamo riusciti ad eleggere il Capo dello Stato e abbiamo scelto Lei come nostro nuovo Capo. Governi bene in questi due anni!"""
 			print "Onori al Capo dello Stato", nome, "!"
 			mandatop = mandatop + 1
 			print "Mandato:", mandatop
 			caput = 1
-			elettori = elettori + 1
+			elettori = elettori + 5
 			decas = 1 #a milano solo un mandato per volta, quindi...
 			#capostato()
-		elif parlamento/deputati < 2:
+		elif (parlamento+5)/deputati < 2:
 			print "Salve, Presidente. Abbiamo eletto il nostro nuovo presidente. Aumenterà i nostri elettori."
-			elettori = elettori + 1
+			elettori = elettori + 5
 			sindaci = sindaci + 3
 			caput = 0
 			decas = 0
 		else:
 			caput = 0
 			decas = 0
-		if parlamento/deps < 2:
+		if (parlamento+5)/deps < 2:
 			print sinistra, "elegge il capo dello Stato"
-			ele2 = ele2 + 1
-		if parlamento/depd < 2:
+			ele2 = ele2 + 5
+		if (parlamento+5)/depd < 2:
 			print destra, "elegge il capo dello Stato"
-			ele1 = ele1 + 1
+			ele1 = ele1 + 5
 		
 
 	if turno%5 == 0:
